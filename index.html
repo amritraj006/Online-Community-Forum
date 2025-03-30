@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar from Left</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="relative ">
+    <!-- <button class="goto bg-red-500 fixed text-black px-5 py-2 hover:bg-green-500 hover:text-white hidden rounded-sm mt-[37%] left-[93%] transition-all duration-500 z-[999999] shadow-2xl shadow-blue-200">Top</button> -->
+    <i class="text-4xl goto fa-solid fa-arrow-up fixed text-blue-700 px-5 py-2 hover:bg-green-500 hover:text-white hidden rounded-sm mt-[37%] left-[93%] transition-all duration-500 z-[999999] "></i>
+    <header class='transition-colors duration-800 shadow-2xs p-[15px] sticky top-0 z-[999] bg-white shadow-slate-200'>
+        <div class="sub-h gap-10 max-w-[1200px] flex items-center mx-auto">
+            <div class="">
+                <h1 class="text-2xl font-bold uppercase tracking-wide adaptive-glow">
+                    Community Hub
+                </h1>
+                
+            </div>
+            <div class="flex items-center text-[14.5px] gap-7 font-[350] font-sans tracking-tight">
+
+                <div class="relative group inline-block">
+                    <a href="#" class="hover:text-green-600 flex items-center relative">
+                        Education 
+                        <span class="ml-1 transform transition-transform duration-300 group-hover:rotate-180">⏷</span>
+                    </a>
+                    <div class="z-[100] absolute left-0 mt-[25.4px] w-40 bg-white shadow-lg rounded-b-md border-t-2 opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Courses</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tutorials</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Study Material</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tutorials</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tutorials</a>
+                    </div>
+                </div>
+                <div class="relative group inline-block">
+                    <a href="#" class="hover:text-green-600 flex items-center">
+                        Plans and Pricing
+                        <span class="ml-1 transform transition-transform duration-300 group-hover:rotate-180">⏷</span>
+                    </a>
+                    <div class="z-[100] absolute left-0 mt-[25.4px] w-40 bg-white shadow-lg rounded-b-md border-t-2 opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Courses</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tutorials</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Study Material</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tutorials</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tutorials</a>
+                    </div>
+                </div>
+                <div class="relative group inline-block">
+                    <a href="#" class="hover:text-green-600 flex items-center">
+                        Learn 
+                        <span class="ml-1 transform transition-transform duration-300 group-hover:rotate-180">⏷</span>
+                    </a>
+                    <div class="z-[100] absolute left-0 mt-[25.4px] w-40 bg-white shadow-lg rounded-b-md border-t-2 opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Courses</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tutorials</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Study Material</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tutorials</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tutorials</a>
+                    </div>
+                </div>
+                <p id="toggleSidebar" class="inline cursor-pointer hover:text-green-600">More</p>
+            </div>
+
+            <nav class="nav flex list-none gap-10 ml-auto font-[400] text-[18px] items-center">
+                <li id="searchButton" class="flex items-center gap-2">
+                    <i  class="m-glass fa-solid fa-magnifying-glass text-md  font-extralight"></i>
+                    Search
+                </li>
+
+                <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Help
+                </li>
+                <li id="loginButton" class="relative flex items-center gap-2">
+                    <i class="fa-solid fa-circle-user"></i>
+                    Account
+                </li>
+
+                <div id="loginDiv" class=" shadow-black p-8 bg-white rounded-lg w-[40%] h-[70vh] z-[99] fixed top-[10.9%] left-1/2 hidden -translate-x-1/2 shadow-xl">
+                    <h2 class="text-xl font-semibold text-center mb-4">Student Login</h2>
+                    <form id="loginForm" class="space-y-5">
+                        <div>
+                            <label for="email" class="block text-sm font-medium">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="w-full mt-1 p-2 border rounded-md" 
+                                placeholder="Enter your email" 
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="username" class="block text-sm font-medium">Username</label>
+                            <input 
+                                type="text" 
+                                id="username" 
+                                class="w-full mt-1 p-2 border rounded-md" 
+                                placeholder="Enter your username" 
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium">Password</label>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                class="w-full mt-1 p-2 border rounded-md" 
+                                placeholder="Enter your password" 
+                                required
+                            />
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+                        >Login</button>
+                        <p id="error" class="text-red-500 text-sm text-center mt-2"></p>
+                    </form>
+                
+                    
+                </div>
+
+
+                <div class="bg-gray-600 w-[2px] h-[40px]"></div>
+                <button id="themeToggle" class=" bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 rounded-full">
+                    🌙
+                </button>
+                
+                
+            </nav>
+        </div>
+    </header>
+
+    <main class="transition-colors duration-800">
+      <div class="page1 page  w-[100%] h-[100vh]" id="page1">
+        <div class="top-0 overflow-hidden  w-[100%] h-[90%] relative">
+            <img class="slide w-full h-full  absolute opacity-100 transition-opacity duration-500" 
+                src="preview.webp">
+            <img class="slide w-full h-full  absolute opacity-0 transition-opacity duration-700" 
+                src="preview (1).webp">
+            <img class="slide w-full h-full  absolute opacity-0 transition-opacity duration-500" 
+                src="https://img.freepik.com/free-photo/fantasy-style-scene-with-mountains-landscape_23-2151124498.jpg?t=st=1742466521~exp=1742470121~hmac=59aa5a1d7383d579c1e6a5238d98848855ac9cc6a6737bb78e2d51f5bd9afc9e&w=1380">
+            <img class="slide w-full h-full  absolute opacity-0 transition-opacity duration-500" 
+                src="https://i0.wp.com/picjumbo.com/wp-content/uploads/pretty-colorful-fantasy-lake-landscape-free-photo.jpg?w=2210&quality=70">
+            <img class="slide w-full h-full  absolute opacity-0 transition-opacity duration-500" 
+                src="https://img.freepik.com/free-photo/fantasy-style-scene-with-mountains-landscape_23-2151124603.jpg?t=st=1742466737~exp=1742470337~hmac=cf05dab8ac1dab39066a38ed5c5dc7c908a1120783e85b6244ca7e26f6f4758d&w=1380">
+            <img class="slide w-full h-full  absolute opacity-0 transition-opacity duration-500" 
+                src="https://img.freepik.com/free-photo/fantasy-style-scene-with-mountains-landscape_23-2151124834.jpg?t=st=1742467040~exp=1742470640~hmac=3646f11d8f019b1a5ae3cdd31d39c78fec90cb14b1d61cd9c16dbcb4576c5f8e&w=1380">
+                <i id="prev" class="fa-solid fa-arrow-left absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-sm hover:bg-black"></i>
+                <i id="next" class="fa-solid fa-arrow-right absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-sm hover:bg-black"></i>
+        </div>
+
+            
+
+       
+    </div>
+    <div>
+        
+    </div>
+    
+
+    <div class="page2 page w-full h-screen flex flex-col gap-8" id="page2">
+        <h1 class="font-bold text-4xl ml-10 mt-8">What's on your mind?</h1>
+        <div class="flex flex-row overflow-auto scrollbar-hide space-x-6 px-10 w-full h-[80%] mx-auto">
+            <div class="min-w-[300px] bg-gradient-to-r from-blue-500 to-purple-500 p-5 rounded-lg shadow-md overflow-y-auto transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer">
+                <h2 class="text-xl font-semibold text-gray-800">🔥 Trending Discussions</h2>
+                <ul class="mt-3 space-y-2">
+                    <li class="border-b pb-2 hover:bg-green-500 p-2 rounded">
+                        <a href="#" class="text-white hover:opacity-80 transition duration-300 hover:underline">How to prepare for exams effectively?</a>  
+                        <span class="text-sm text-gray-500 block">💬 32 Replies • ❤️ 120 Likes</span>
+                    </li>
+                    <li class="border-b pb-2 hover:bg-green-500 p-2 rounded">
+                        <a href="#" class="text-white hover:opacity-80 transition duration-300 hover:underline">Best online courses for programming?</a>  
+                        <span class="text-sm text-gray-500 block">💬 20 Replies • ❤️ 90 Likes</span>
+                    </li>
+                    <li class="border-b pb-2 hover:bg-green-500 p-2 rounded">
+                        <a href="#" class="text-white hover:opacity-80 transition duration-300 hover:underline">Is AI taking over jobs?</a>  
+                        <span class="text-sm text-gray-500 block">💬 40 Replies • ❤️ 150 Likes</span>
+                    </li>
+                    <li class="border-b pb-2 hover:bg-green-500 p-2 rounded">
+                        <a href="#" class="text-white hover:opacity-80 transition duration-300 hover:underline">Tips for mastering React.js</a>  
+                        <span class="text-sm text-gray-500 block">💬 18 Replies • ❤️ 70 Likes</span>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="relative min-w-[800px] bg-gradient-to-r from-pink-500 to-orange-500 p-5 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer">
+                <div class="open1 absolute w-full h-full bg-white text-black left-0 top-0 z-[9999] hidden
+                 transition-all duration-1000 shadow-2xl shadow-gray-500 border-2 border-gray-300">
+                    <span  class="close1 text-4xl z-[999] cursor-pointer absolute top-4 right-4">&times;</span>
+                </div>
+                <div class="open2 absolute w-full h-full bg-white text-black left-0 top-0 z-[9999] hidden
+                 transition-all duration-1000 shadow-2xl shadow-gray-500 border-2 border-gray-300">
+                    <span  class="close2 text-4xl z-[999] cursor-pointer absolute top-4 right-4">&times;</span>
+                </div>
+                <div class="open3 absolute w-full h-full bg-white text-black left-0 top-0 z-[9999] hidden
+                 transition-all duration-1000 shadow-2xl shadow-gray-500 border-2 border-gray-300">
+                    <span  class="close3 text-4xl z-[999] cursor-pointer absolute top-4 right-4">&times;</span>
+                </div>
+                
+               
+                <h2 class="text-xl font-semibold text-gray-800">📚 Study Groups</h2>
+                <div class="flex gap-4 mt-3 flex-wrap relative">
+                    <div class="Mathgroups p-3 bg-blue-100 rounded-lg transition-all transform hover:scale-110 cursor-pointer">
+                        <h3 class="font-semibold text-blue-800">Math Lovers</h3>
+                        <p class="text-sm text-gray-600">🧑‍🎓 15 Members</p>
+                        
+                    </div>
+                    
+                    
+                    <div class="WebDevGroup p-3 bg-green-100 rounded-lg transition-all transform hover:scale-110 cursor-pointer">
+                        <h3 class="font-semibold text-green-800">Web Dev Enthusiasts</h3>
+                        <p class="text-sm text-gray-600">👨‍💻 25 Members</p>
+                    </div>
+                    <div class="AIGroup p-3 bg-yellow-100 rounded-lg transition-all transform hover:scale-110 cursor-pointer">
+                        <h3 class="font-semibold text-yellow-800">AI & Machine Learning</h3>
+                        <p class="text-sm text-gray-600">🤖 30 Members</p>
+                    </div>
+                    <div class="p-3 bg-purple-100 rounded-lg transition-all transform hover:scale-110 cursor-pointer">
+                        <h3 class="font-semibold text-purple-800">Startup Founders</h3>
+                        <p class="text-sm text-gray-600">🚀 20 Members</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="min-w-[300px] bg-gradient-to-r from-green-500 to-teal-500 p-5 rounded-lg shadow-md overflow-y-auto transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer">
+                <h2 class="text-xl font-semibold text-gray-800">📁 Shared Resources</h2>
+                <ul class="mt-3 space-y-2">
+                    <li class="border-b pb-2 hover:bg-gray-100 p-2 rounded">
+                        <a href="#" class="text-blue-600 hover:underline">📄 JavaScript Basics Notes.pdf</a>  
+                        <span class="text-sm text-gray-500 block">👤 Shared by Alex • 📥 50 Downloads</span>
+                    </li>
+                    <li class="border-b pb-2 hover:bg-gray-100 p-2 rounded">
+                        <a href="#" class="text-blue-600 hover:underline">📄 Physics Formulas Cheat Sheet</a>  
+                        <span class="text-sm text-gray-500 block">👤 Shared by Priya • 📥 30 Downloads</span>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="min-w-[320px] bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 p-6 rounded-xl shadow-lg transform transition-all hover:scale-105 hover:shadow-2xl cursor-pointer">
+              <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                  ❓ <span>Ask a Question</span>
+              </h2>
+              <input type="text" class="w-full p-3 mt-3 border-none rounded-lg focus:ring-4 focus:ring-pink-300 outline-none transition-all text-gray-800" placeholder="Type your question...">
+              <button class="mt-3 w-full bg-white text-indigo-700 font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-indigo-100 active:scale-95 transition-all">
+                  🚀 Post Question
+              </button>
+            </div>
+    
+            <div class="min-w-[300px] bg-gradient-to-r from-yellow-500 to-red-500 p-5 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer">
+                <h2 class="text-xl font-semibold text-gray-800">🎤 Upcoming Events</h2>
+                <ul class="mt-3 space-y-2">
+                    <li class="border-b pb-2 hover:bg-gray-100 p-2 rounded">
+                        <strong class="text-blue-600">📅 Web Dev Bootcamp</strong>  
+                        <span class="text-sm text-gray-500 block">🗓️ March 25, 2025 • 🏫 Online</span>
+                    </li>
+                    <li class="border-b pb-2 hover:bg-gray-100 p-2 rounded">
+                        <strong class="text-blue-600">🚀 AI & ML Workshop</strong>  
+                        <span class="text-sm text-gray-500 block">🗓️ April 5, 2025 • 📍 University Campus</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  
+  
+ 
+    <div class="page3 page w-full h-screen flex flex-col items-center p-5 relative">
+    <!-- Post Input Section -->
+    <h1 class="text-4xl font-bold font-sans">Create new post</h1>
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl mb-6 transition-transform duration-300 hover:scale-105 mt-5">
+        <textarea class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Share your thoughts..."></textarea>
+        <div class="flex justify-between items-center mt-3">
+            <button class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300">Post</button>
+            <input type="file" class="hidden" id="uploadImage">
+            <label for="uploadImage" class="cursor-pointer text-blue-600 hover:underline">📷 Upload Image</label>
+        </div>
+    </div>
+
+    <!-- Posts Section -->
+    <div class="w-full max-w-3xl space-y-6">
+        <!-- Sample Post -->
+        <div class="bg-white p-5 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            <div class="flex items-center mb-3">
+                <img src="https://randomuser.me/api/portraits/men/20.jpg" class="w-12 h-12 rounded-full mr-3">
+                <div>
+                    <p class="font-semibold">Alex Johnson</p>
+                    <p class="text-sm text-gray-500">10 min ago</p>
+                </div>
+            </div>
+            <p class="mb-3 text-gray-800">Just finished my first React project! Feeling accomplished. 🚀</p>
+            <img src="https://source.unsplash.com/700x350/?coding" class="w-full rounded-lg mb-3">
+            <div class="flex justify-between text-gray-600">
+                <button class="hover:text-blue-600 transition-all duration-200">❤️ Like</button>
+                <button class="hover:text-blue-600 transition-all duration-200">💬 Comment</button>
+                <button class="hover:text-blue-600 transition-all duration-200">🔄 Share</button>
+            </div>
+        </div>
+
+        <!-- Another Post -->
+        <div class="bg-white p-5 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            <div class="flex items-center mb-3">
+                <img src="https://randomuser.me/api/portraits/men/15.jpg" class="w-12 h-12 rounded-full mr-3">
+                <div>
+                    <p class="font-semibold">Michael Carter</p>
+                    <p class="text-sm text-gray-500">20 min ago</p>
+                </div>
+            </div>
+            <p class="mb-3 text-gray-800">Has anyone tried the new AI-powered coding assistant? It's amazing! 🤖</p>
+            <img src="https://source.unsplash.com/700x350/?ai,technology" class="w-full rounded-lg mb-3">
+            <div class="flex justify-between text-gray-600">
+                <button class="hover:text-blue-600 transition-all duration-200">❤️ Like</button>
+                <button class="hover:text-blue-600 transition-all duration-200">💬 Comment</button>
+                <button class="hover:text-blue-600 transition-all duration-200">🔄 Share</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+        
+        <div class="page4 page" id="page4"></div>
+    </main>
+
+    <div id="sidebar" class="sidebar z-[99999] fixed top-0 left-[-400px] w-[400px] h-full bg-white p-[20px] shadow-lg  transition-all duration-300 ease-in-out">
+      <span id="closeSidebar" class="close-btn text-xl cursor-pointer absolute top-4 right-4">&times;</span>
+      
+      <h2 class="text-2xl font-semibold text-blue-600">Community Hub</h2>
+      <p class="text-gray-600 text-sm mb-4">Connect, discuss, and collaborate with students.</p>
+  
+      <nav class="space-y-3">
+          <a href="#" class="block p-2 text-gray-700 hover:bg-blue-100 rounded-md">📢 Announcements</a>
+          <a href="#" class="block p-2 text-gray-700 hover:bg-blue-100 rounded-md">💬 General Discussions</a>
+          <a href="#" class="block p-2 text-gray-700 hover:bg-blue-100 rounded-md">📚 Study Resources</a>
+          <a href="#" class="block p-2 text-gray-700 hover:bg-blue-100 rounded-md">📝 Assignments Help</a>
+          <a href="#" class="block p-2 text-gray-700 hover:bg-blue-100 rounded-md">👥 Group Projects</a>
+          <a href="#" class="block p-2 text-gray-700 hover:bg-blue-100 rounded-md">🎓 Career Advice</a>
+          <a href="#" class="block p-2 text-gray-700 hover:bg-blue-100 rounded-md">❓ Ask a Question</a>
+      </nav>
+  
+      <div class="mt-6">
+          <button class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+              Create New Post
+          </button>
+      </div>
+  </div>
+
+    <div id="searchBox" class="shadow-black bg-white rounded-lg w-[50%] h-[60vh] z-[99]  text-center fixed top-[10.9%] left-1/2 hidden -translate-x-1/2 shadow-xl">
+        <h1 class="text-3xl md:text-4xl font-semibold mb-6 text-center mt-5">
+            Hello, What Do You Want To Search?
+        </h1>
+
+        <div class="relative w-full max-w-xl mx-auto">
+            <input
+                type="text"
+                placeholder="Complete I"
+                class="w-full p-4 pr-12 rounded-lg bg-gray-800 text-white focus:outline-none border border-gray-700 focus:border-green-500"
+            />
+            <button class="absolute top-1/2 right-4 transform -translate-y-1/2 text-green-500">
+                🔍
+            </button>
+        </div>
+
+        <div class="mt-6 mx-auto">
+            <button class="px-4 py-2 bg-gray-700 text-white rounded-md">
+                Master DS & ML
+            </button>
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-md">
+                Courses @90% Refund
+            </button>
+            <button class="px-4 py-2 bg-gray-700 text-white rounded-md">
+                Full Stack Live Classes
+            </button>
+        </div>
+    </div>
+
+
+    </div>
+    
+  <footer  class="bg-white text-black py-10 transition-colors duration-800 border-t">
+    <div class="max-w-6xl mx-auto px-5 grid grid-cols-4 gap-10 py-[50px]">
+      
+      <!-- Community -->
+      <div class="">
+        <h3 class="text-lg font-semibold mb-2 relative after:block after:w-10 after:h-[2px] after:bg-blue-500 after:mt-1">Community</h3>
+        <ul class="space-y-2 text-black">
+          <li><a href="#" class="footer-link hover:text-gray-700">About Us</a></li>
+          <li><a href="#" class="footer-link hover:text-gray-700">Our Mission</a></li>
+          <li><a href="#" class="footer-link hover:text-gray-700">Guidelines</a></li>
+          <li><a href="#" class="footer-link hover:text-gray-700">Support Us</a></li>
+        </ul>
+      </div>
+  
+      <!-- Resources -->
+      <div class="">
+        <h3 class="text-lg font-semibold mb-2 relative after:block after:w-10 after:h-[2px] after:bg-blue-500 after:mt-1">Resources</h3>
+        <ul class="space-y-2 text-black">
+          <li><a href="#" class="footer-link hover:text-gray-700">Study Materials</a></li>
+          <li><a href="#" class="footer-link hover:text-gray-700">Career Advice</a></li>
+          <li><a href="#" class="footer-link hover:text-gray-700">Workshops</a></li>
+          <li><a href="#" class="footer-link hover:text-gray-700">Internship Listings</a></li>
+        </ul>
+      </div>
+  
+      <!-- Quick Links -->
+      <div class="">
+        <h3 class="text-lg font-semibold mb-2 relative after:block after:w-10 after:h-[2px] after:bg-blue-500 after:mt-1">Quick Links</h3>
+        <ul class="space-y-2 text-black">
+          <li><a href="#" class="footer-link hover:text-gray-700">Forum</a></li>
+          <li><a href="#" class="footer-link hover:text-gray-700">Discussions</a></li>
+          <li><a href="#" class="footer-link hover:text-gray-700">Events</a></li>
+          <li><a href="#" class="footer-link hover:text-gray-700">FAQs</a></li>
+        </ul>
+      </div>
+  
+      <!-- Stay Connected -->
+      <div class="">
+        <h3 class="text-lg font-semibold mb-2 relative after:block after:w-10 after:h-[2px] after:bg-blue-500 after:mt-1">Stay Connected</h3>
+        <div class="flex space-x-3 mt-3">
+          <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-blue-500">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-blue-500">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-blue-500">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-blue-500">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+  
+    </div>
+</footer>
+
+
+    <script src="script.js">
+    </script>
+    <script src="login.js"></script>
+
+</body>
+</html>
