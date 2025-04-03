@@ -14,15 +14,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function toggleArrow(id, up) {
-    document.getElementById(id).textContent = up ? "⏶" : "⏷";
-}
-
-document.querySelectorAll(".group").forEach((item) => {
-    let arrow = item.querySelector("span");
-
-    item.addEventListener("mouseenter", () => toggleArrow(arrow.id, true));
-    item.addEventListener("mouseleave", () => toggleArrow(arrow.id, false));
-});
-
-
