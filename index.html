@@ -2740,7 +2740,7 @@
                 </div>
                 
                 <!-- Enhanced Posts Feed -->
-                <div class="w-full space-y-8 animate-fadeIn delay-100">
+                <div id="postsContainer" class="w-full space-y-8 animate-fadeIn delay-100">
                     <!-- Sample Post 1 -->
                     <div class="bg-white p-7 rounded-2xl shadow-lg border-l-4 border-blue-400 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group backdrop-blur-sm bg-opacity-90">
                         <div class="flex items-center mb-5">
@@ -2829,9 +2829,268 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Load More Button -->
+                <div class="flex justify-center mt-10">
+                    <button id="loadMoreButton" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full shadow-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 text-lg font-medium hover:shadow-xl flex items-center gap-3 group">
+                        <span class="bg-white/20 p-2 rounded-full transition-all duration-300 group-hover:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </span>
+                        <span>Load More Posts</span>
+                    </button>
+                </div>
             </div>
         </div>
         
+        <!-- Additional posts template (hidden) -->
+        <template id="postTemplate">
+            <div class="bg-white p-7 rounded-2xl shadow-lg border-l-4 border-{color}-400 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group backdrop-blur-sm bg-opacity-90 opacity-0 animate-fadeInUp">
+                <div class="flex items-center mb-5">
+                    <div class="relative">
+                        <img src="{avatar}" class="w-14 h-14 rounded-full mr-4 object-cover border-2 border-{color}-300 group-hover:border-{hoverColor}-400 transition-all duration-300">
+                        <span class="absolute bottom-0 right-4 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white"></span>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg text-gray-800">{name}</p>
+                        <p class="text-sm text-gray-500">{time} ago • <span class="text-{color}-500">{tag}</span></p>
+                    </div>
+                </div>
+                <p class="mb-5 text-gray-800 text-base leading-relaxed">{content}</p>
+                <div class="relative rounded-xl overflow-hidden mb-5 h-80 bg-gray-100">
+                    <img src="{image}" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <div class="flex justify-between text-gray-600 text-base border-t pt-4">
+                    <button class="flex items-center gap-2 hover:text-red-500 transition-all duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        <span class="group-hover:underline">Like</span>
+                    </button>
+                    <button class="flex items-center gap-2 hover:text-blue-500 transition-all duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        <span class="group-hover:underline">Comment</span>
+                    </button>
+                    <button class="flex items-center gap-2 hover:text-green-500 transition-all duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                        <span class="group-hover:underline">Share</span>
+                    </button>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    {tags}
+                </div>
+            </div>
+        </template>
+        
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle post creation card
+            const toggleButton = document.getElementById('togglePostButton');
+            const postCreationCard = document.getElementById('postCreationCard');
+            const toggleArrow = document.getElementById('toggleArrow');
+            
+            toggleButton.addEventListener('click', function() {
+                if (postCreationCard.classList.contains('scale-y-0')) {
+                    postCreationCard.classList.remove('scale-y-0', 'h-0', 'opacity-0');
+                    postCreationCard.classList.add('scale-y-100', 'h-auto', 'opacity-100');
+                    toggleArrow.textContent = '⌃';
+                } else {
+                    postCreationCard.classList.remove('scale-y-100', 'h-auto', 'opacity-100');
+                    postCreationCard.classList.add('scale-y-0', 'h-0', 'opacity-0');
+                    toggleArrow.textContent = '⌄';
+                }
+            });
+            
+            // Load more posts functionality
+            const loadMoreButton = document.getElementById('loadMoreButton');
+            const postsContainer = document.getElementById('postsContainer');
+            const postTemplate = document.getElementById('postTemplate');
+            
+            // Sample data for additional posts
+            const additionalPosts = [
+                {
+                    color: 'green',
+                    hoverColor: 'blue',
+                    avatar: 'https://randomuser.me/api/portraits/women/32.jpg',
+                    name: 'Sarah Williams',
+                    time: '35',
+                    tag: '#Designer',
+                    content: 'Just launched my new portfolio website! Check it out and let me know what you think. Feedback is appreciated! ✨',
+                    image: 'https://source.unsplash.com/random/800x400/?design,portfolio',
+                    tags: '<span class="px-3 py-1.5 bg-green-100 text-green-800 text-xs rounded-full hover:bg-green-200 transition-all duration-200">#Design</span><span class="px-3 py-1.5 bg-pink-100 text-pink-800 text-xs rounded-full hover:bg-pink-200 transition-all duration-200">#Portfolio</span><span class="px-3 py-1.5 bg-yellow-100 text-yellow-800 text-xs rounded-full hover:bg-yellow-200 transition-all duration-200">#Creative</span>'
+                },
+                {
+                    color: 'yellow',
+                    hoverColor: 'orange',
+                    avatar: 'https://randomuser.me/api/portraits/men/45.jpg',
+                    name: 'David Kim',
+                    time: '50',
+                    tag: '#Entrepreneur',
+                    content: 'Excited to announce our startup just secured seed funding! The journey has just begun. #StartupLife #DreamBig',
+                    image: 'https://source.unsplash.com/random/800x400/?startup,office',
+                    tags: '<span class="px-3 py-1.5 bg-yellow-100 text-yellow-800 text-xs rounded-full hover:bg-yellow-200 transition-all duration-200">#Startup</span><span class="px-3 py-1.5 bg-blue-100 text-blue-800 text-xs rounded-full hover:bg-blue-200 transition-all duration-200">#Funding</span><span class="px-3 py-1.5 bg-purple-100 text-purple-800 text-xs rounded-full hover:bg-purple-200 transition-all duration-200">#Business</span>'
+                },
+                {
+                    color: 'red',
+                    hoverColor: 'pink',
+                    avatar: 'https://randomuser.me/api/portraits/women/65.jpg',
+                    name: 'Emma Rodriguez',
+                    time: '1 hour',
+                    tag: '#Photographer',
+                    content: 'Captured this beautiful sunset during my trip to the mountains. Nature never fails to amaze me. 🌄',
+                    image: 'https://source.unsplash.com/random/800x400/?sunset,mountains',
+                    tags: '<span class="px-3 py-1.5 bg-red-100 text-red-800 text-xs rounded-full hover:bg-red-200 transition-all duration-200">#Photography</span><span class="px-3 py-1.5 bg-orange-100 text-orange-800 text-xs rounded-full hover:bg-orange-200 transition-all duration-200">#Nature</span><span class="px-3 py-1.5 bg-blue-100 text-blue-800 text-xs rounded-full hover:bg-blue-200 transition-all duration-200">#Travel</span>'
+                },
+                {
+                    color: 'indigo',
+                    hoverColor: 'purple',
+                    avatar: 'https://randomuser.me/api/portraits/men/75.jpg',
+                    name: 'James Wilson',
+                    time: '2 hours',
+                    tag: '#Writer',
+                    content: 'Published my first article on Medium today! It\'s about the power of storytelling in marketing. Would love your thoughts!',
+                    image: 'https://source.unsplash.com/random/800x400/?writing,notebook',
+                    tags: '<span class="px-3 py-1.5 bg-indigo-100 text-indigo-800 text-xs rounded-full hover:bg-indigo-200 transition-all duration-200">#Writing</span><span class="px-3 py-1.5 bg-purple-100 text-purple-800 text-xs rounded-full hover:bg-purple-200 transition-all duration-200">#Marketing</span><span class="px-3 py-1.5 bg-blue-100 text-blue-800 text-xs rounded-full hover:bg-blue-200 transition-all duration-200">#Content</span>'
+                }
+            ];
+            
+            loadMoreButton.addEventListener('click', function() {
+                // Add loading animation to button
+                loadMoreButton.innerHTML = `
+                    <span class="animate-spin">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                    </span>
+                    <span>Loading...</span>
+                `;
+                
+                // Simulate API call delay
+                setTimeout(() => {
+                    // Add new posts with animation
+                    additionalPosts.forEach((post, index) => {
+                        setTimeout(() => {
+                            let postHtml = postTemplate.innerHTML
+                                .replace(/\{color\}/g, post.color)
+                                .replace(/\{hoverColor\}/g, post.hoverColor)
+                                .replace('{avatar}', post.avatar)
+                                .replace('{name}', post.name)
+                                .replace('{time}', post.time)
+                                .replace('{tag}', post.tag)
+                                .replace('{content}', post.content)
+                                .replace('{image}', post.image)
+                                .replace('{tags}', post.tags);
+                            
+                            const div = document.createElement('div');
+                            div.innerHTML = postHtml;
+                            postsContainer.appendChild(div.firstElementChild);
+                            
+                            // Trigger animation
+                            setTimeout(() => {
+                                div.firstElementChild.classList.remove('opacity-0');
+                            }, 50);
+                        }, index * 200); // Stagger animations
+                    });
+                    
+                    // Reset button
+                    loadMoreButton.innerHTML = `
+                        <span class="bg-white/20 p-2 rounded-full transition-all duration-300 group-hover:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </span>
+                        <span>Load More Posts</span>
+                    `;
+                    
+                    // Disable button if no more posts (for demo purposes)
+                    // In a real app, you would check if there are more posts to load
+                    loadMoreButton.disabled = true;
+                    loadMoreButton.classList.remove('from-blue-500', 'to-purple-600', 'hover:from-blue-600', 'hover:to-purple-700');
+                    loadMoreButton.classList.add('from-gray-400', 'to-gray-500', 'cursor-not-allowed');
+                    loadMoreButton.textContent = 'No More Posts';
+                }, 1000);
+            });
+        });
+        </script>
+        
+        <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes floatDelay {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+        
+        .animate-float {
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .animate-float-delay {
+            animation: floatDelay 10s ease-in-out infinite 2s;
+        }
+        
+        @keyframes fadeInSlow {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .animate-fadeInSlow {
+            animation: fadeInSlow 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        </style>
 
         
         <script>
@@ -3142,3 +3401,4 @@
 
 </body>
 </html>
+
