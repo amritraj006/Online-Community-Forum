@@ -4,17 +4,20 @@ html {
     overflow-x: hidden;
 }
 
+
+.sidebar.open {
+    left: 0; /* Sidebar slides in from the left */
+}
+
 .page {
     width: 100%;
     position: relative;
     will-change: transform;
 }
 
-.sidebar.open {
-    left: 0; /* Sidebar slides in from the left */
-}
 
-/* Logo container styles */
+/* Animation classes */
+
 .logo-container {
     display: inline-block;
     margin: 2rem;
@@ -75,17 +78,15 @@ html {
     transition: color 0.3s ease-in-out;
 }
 
-
 body {
-background: #ffffff;
-background-image: radial-gradient(circle, #f0f0f0 1px, transparent 1px);
-background-size: 10px 10px;
-min-height: 100vh;
-font-family: Arial, sans-serif;
-margin: 0;
+    position: relative;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
     padding: 0;
     overflow-x: hidden;
-color: black;
+    color: black;
 }
 
 
@@ -455,3 +456,134 @@ scrollbar-width: none;
        
 
             
+/* 
+            Page 4 */
+
+            /* Custom Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Announcement card hover effect */
+.announcement-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center bottom;
+    backface-visibility: hidden;
+}
+
+.announcement-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hover-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+.btn-hover-effect:hover::after {
+    transform: translateX(0);
+}
+
+/* Category badges with animation */
+.badge {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.badge:hover::after {
+    transform: translateX(100%);
+}
+
+.badge-general {
+    background-color: #E0E7FF;
+    color: #4F46E5;
+}
+
+.badge-academic {
+    background-color: #D1FAE5;
+    color: #047857;
+}
+
+.badge-event {
+    background-color: #FEE2E2;
+    color: #B91C1C;
+}
+
+.badge-opportunity {
+    background-color: #FEF3C7;
+    color: #B45309;
+}
+
+.badge-urgent {
+    background-color: #FFE4E6;
+    color: #F43F5E;
+    animation: pulse 2s infinite;
+}
+
+/* Floating animation for important cards */
+.floating-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Modal backdrop effect */
+.modal-backdrop {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Input focus effects */
+.input-focus-effect:focus {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+/* Initialize wow.js */
+.wow {
+    visibility: hidden;
+}
+
+/* Gradient text for headings */
+.gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}   
