@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -1009,8 +1010,15 @@
                 });
             </script>
             <!-- Theme toggle - always visible -->
-            <button id="themeToggle" class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 rounded-full ml-auto md:ml-0">
-                🌙
+
+            
+            <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white">
+                <svg id="moonIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+                <svg id="sunIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
             </button>
             
             <!-- Mobile menu button - visible only on mobile -->
@@ -1370,7 +1378,72 @@
         </div>
         
 
-
+        <div class="page4 page min-h-screen py-8 px-4 sm:px-6 lg:px-8" id="page4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header with more professional animation -->
+                <div class="text-center mb-12 wow animate__fadeInDown" data-wow-duration="0.8s">
+                    <h1 class="text-4xl font-bold text-indigo-700 mb-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+                        Campus Announcements
+                    </h1>
+                    <p class="text-lg text-gray-600 wow animate__fadeIn" data-wow-delay="0.3s">Stay updated with the latest news and events</p>
+                    <div class="mt-6 wow animate__fadeIn" data-wow-delay="0.5s">
+                        <button id="newAnnouncementBtn" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                            New Announcement
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Announcement Cards Container with staggered animation -->
+                <div class="space-y-6 wow animate__fadeIn" id="announcementsContainer" data-wow-delay="0.7s">
+                    <!-- Announcement cards will be dynamically inserted here -->
+                </div>
+    
+                <!-- New Announcement Modal with more professional animation -->
+                <div id="announcementModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden backdrop-blur-sm">
+                    <div class="bg-white rounded-xl p-8 w-full max-w-md wow animate__zoomIn" data-wow-duration="0.4s">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-2xl font-semibold text-gray-800">Create New Announcement</h3>
+                            <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700 transition-colors duration-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <form id="announcementForm">
+                            <div class="mb-5">
+                                <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                                <input type="text" id="title" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200">
+                            </div>
+                            <div class="mb-5">
+                                <label for="content" class="block text-sm font-medium text-gray-700 mb-2">Content</label>
+                                <textarea id="content" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <label for="category" class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                                <select id="category" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tZG93biI+PHBhdGggZD0ibTYgOSA2IDYgNi02Ii8+PC9zdmc+')] bg-no-repeat bg-[center_right_1rem] bg-[length:1.5rem]">
+                                    <option value="general">General</option>
+                                    <option value="academic">Academic</option>
+                                    <option value="event">Event</option>
+                                    <option value="opportunity">Opportunity</option>
+                                    <option value="urgent">Urgent</option>
+                                </select>
+                            </div>
+                            <div class="flex justify-end space-x-4">
+                                <button type="button" id="cancelBtn" class="px-5 py-2.5 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-all duration-200 transform hover:-translate-x-1">Cancel</button>
+                                <button type="submit" class="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 transform hover:translate-x-1 shadow-md hover:shadow-lg">
+                                    Post Announcement
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         
         <!-- Community Feed Section -->
         <div class="page2 page w-full min-h-screen flex flex-col gap-12 py-16 px-8" id="page2">
@@ -3606,7 +3679,11 @@
         </script>
         
         
-        <div class="page4 page" id="page4"></div>
+
+        
+
+
+        
     </main>
 
     <div id="sidebar" class="sidebar fixed top-0 left-[-400px] w-[350px] h-full bg-white shadow-xl transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] z-[1000] overflow-hidden">
@@ -3881,4 +3958,5 @@
 
 </body>
 </html>
+
 
