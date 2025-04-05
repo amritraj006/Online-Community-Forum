@@ -175,844 +175,120 @@
             });
         });
     </script>
+    
 
-    <header class='transition-colors duration-800 shadow-2xs p-[15px] fixed w-full top-0 z-[999] bg-white shadow-slate-200'>
-        <div class="sub-h gap-10 max-w-[1200px] flex items-center mx-auto">
-            <div class="flex items-center">
+<header class='transition-colors duration-800 shadow-2xs p-[15px] fixed w-full top-0 z-[999] bg-white shadow-slate-200'>
+    <div class="sub-h gap-10 max-w-[1200px] flex items-center mx-auto">
+        <div class="flex items-center">
             <svg class="w-8 h-8 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
             <span class="text-lg font-bold text-gray-800">Edu <span class="text-green-500">Connect</span></span>
         </div>
 
-            <!-- Navigation items - hidden on mobile, visible on md and up -->
-            <div class="hidden md:flex items-center text-sm gap-9
-             font-medium font-sans">
-                <!-- Education Dropdown -->
-                <div class="relative group">
-                    <button class="text-gray-700 hover:text-emerald-600 transition-colors flex items-center py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 rounded">
-                        Education
-                        <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="absolute left-0 mt-1 w-56 origin-top-left bg-white shadow-xl rounded-md border border-gray-100 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 ease-out z-50 transform-gpu">
-                        <div class="py-1">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Online Courses</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Certification Programs</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Study Materials</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Academic Resources</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Learning Paths</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Plans & Pricing Dropdown -->
-                <div class="relative group">
-                    <button class="text-gray-700 hover:text-emerald-600 transition-colors flex items-center py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 rounded">
-                        Plans & Pricing
-                        <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="absolute left-0 mt-1 w-56 origin-top-left bg-white shadow-xl rounded-md border border-gray-100 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 ease-out z-50 transform-gpu">
-                        <div class="py-1">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Individual Plans</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Team Plans</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Enterprise Solutions</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Free Resources</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Compare Plans</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Learn Dropdown -->
-                <div class="relative group">
-                    <button class="text-gray-700 hover:text-emerald-600 transition-colors flex items-center py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 rounded">
-                        Learn
-                        <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="absolute left-0 mt-1 w-56 origin-top-left bg-white shadow-xl rounded-md border border-gray-100 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 ease-out z-50 transform-gpu">
-                        <div class="py-1">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Tutorials</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Documentation</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Guides</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Blog</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Community</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Simple Link -->
-                <a href="#" class="text-gray-700 hover:text-emerald-600 transition-colors py-2" id="toggleSidebar">More</a>
-            </div>
-    
-            <!-- Right navigation - hidden on mobile, visible on md and up -->
-            <nav class="hidden md:flex list-none gap-8 ml-auto font-medium text-base items-center ">
-            <!-- Search Button -->
-<li id="searchButton" class="relative flex items-center gap-2 text-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
-    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-    </svg>
-    <span>Search</span>
-</li>
-
-<!-- Search Modal -->
-<div id="searchBox" class="fixed top-0 inset-0 z-[9999] hidden items-start justify-center bg-black bg-opacity-50 backdrop-blur-sm pt-[height-of-your-header]">
-    <div class="bg-white dark:bg-gray-800 w-full h-[calc(100vh-height-of-your-header)] rounded-t-xl shadow-2xl transform transition-all duration-300 translate-y-full">
-        <div class="p-6 md:p-8 h-full overflow-y-auto">
-            <!-- Close Button -->
-            <button id="closeSearch" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-
-            <!-- Header -->
-            <div class="text-center mb-8">
-                <h1 class="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-white">
-                    Global Search
-                </h1>
-                <p class="text-gray-500 dark:text-gray-400 mt-2">
-                    Search by keywords, topics, or usernames
-                </p>
-            </div>
-
-            <!-- Search Input -->
-            <div class="relative mb-6 max-w-3xl mx-auto">
-                <input
-                    id="searchInput"
-                    type="text"
-                    placeholder="Search for posts, users, topics..."
-                    class="w-full p-4 pl-12 pr-16 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
-                    autofocus
-                />
-                <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        <!-- Mobile menu button - visible only on mobile -->
+        <button class="mobile-menu-toggle md:hidden ml-auto p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none">
+            <svg id="mobileMenuOpenIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="mobileMenuCloseIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <!-- Desktop Navigation - hidden on mobile, visible on md and up -->
+        <div class="hidden md:flex items-center text-sm gap-9 font-medium font-sans">
+            <!-- Education Dropdown -->
+            <div class="relative group">
+                <button class="text-gray-700 hover:text-emerald-600 transition-colors flex items-center py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 rounded">
+                    Education
+                    <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
-                </div>
-                <button id="searchSubmit" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition-colors">
-                    Search
                 </button>
-            </div>
-
-            <!-- Filters and Sorting -->
-            <div class="max-w-3xl mx-auto mb-6 flex flex-wrap gap-4 items-center justify-between">
-                <!-- Post Type Filter -->
-                <div class="flex items-center gap-2">
-                    <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Post Type:</span>
-                    <select id="postTypeFilter" class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-md px-3 py-1 text-sm border-none focus:ring-2 focus:ring-green-500">
-                        <option value="all">All</option>
-                        <option value="question">Questions</option>
-                        <option value="discussion">Discussions</option>
-                        <option value="announcement">Announcements</option>
-                    </select>
-                </div>
-                
-                <!-- Category Filter -->
-                <div class="flex items-center gap-2">
-                    <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Category:</span>
-                    <select id="categoryFilter" class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-md px-3 py-1 text-sm border-none focus:ring-2 focus:ring-green-500">
-                        <option value="all">All</option>
-                        <option value="technology">Technology</option>
-                        <option value="science">Science</option>
-                        <option value="business">Business</option>
-                        <option value="arts">Arts</option>
-                    </select>
-                </div>
-                
-                <!-- Sort Options -->
-                <div class="flex items-center gap-2">
-                    <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Sort by:</span>
-                    <select id="sortBy" class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-md px-3 py-1 text-sm border-none focus:ring-2 focus:ring-green-500">
-                        <option value="latest">Latest</option>
-                        <option value="upvoted">Most Upvoted</option>
-                        <option value="trending">Trending</option>
-                        <option value="relevance">Relevance</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Tags Filter -->
-            <div class="max-w-3xl mx-auto mb-6">
-                <div class="flex items-center gap-2 flex-wrap">
-                    <span class="text-sm font-medium text-gray-600 dark:text-gray-300">Tags:</span>
-                    <div class="flex flex-wrap gap-2">
-                        <button class="tag-filter px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-full transition-colors text-sm" data-tag="javascript">
-                            JavaScript
-                        </button>
-                        <button class="tag-filter px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-full transition-colors text-sm" data-tag="python">
-                            Python
-                        </button>
-                        <button class="tag-filter px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-full transition-colors text-sm" data-tag="react">
-                            React
-                        </button>
-                        <button class="tag-filter px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-full transition-colors text-sm" data-tag="ai">
-                            AI
-                        </button>
+                <div class="absolute left-0 mt-1 w-56 origin-top-left bg-white shadow-xl rounded-md border border-gray-100 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 ease-out z-50 transform-gpu">
+                    <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Online Courses</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Certification Programs</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Study Materials</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Academic Resources</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Learning Paths</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Breadcrumb Navigation (will be populated dynamically) -->
-            <div id="breadcrumb" class="max-w-3xl mx-auto mb-6 hidden">
-                <nav class="flex" aria-label="Breadcrumb">
-                    <ol class="inline-flex items-center space-x-1 md:space-x-2">
-                        <li class="inline-flex items-center">
-                            <a href="#" class="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">Home</a>
-                        </li>
-                        <li aria-current="page">
-                            <div class="flex items-center">
-                                <svg class="w-3 h-3 mx-1 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Search</span>
-                            </div>
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-
-            <!-- Search Results (initially hidden) -->
-            <div id="searchResults" class="max-w-3xl mx-auto hidden">
-                <div class="border-b border-gray-200 dark:border-gray-700 mb-4">
-                    <h2 class="text-lg font-semibold text-gray-800 dark:text-white">Search Results</h2>
-                </div>
-                
-                <!-- Results will be populated here -->
-                <div id="resultsContainer" class="space-y-4">
-                    <!-- Sample result item (will be dynamically generated) -->
-                    <div class="result-item hidden p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-lg font-medium text-gray-800 dark:text-white"><a href="#" class="hover:underline"></a></h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-300 mt-1"></p>
-                                <div class="flex gap-2 mt-2">
-                                    <span class="post-type-badge px-2 py-1 text-xs rounded-full"></span>
-                                    <span class="category-badge px-2 py-1 text-xs rounded-full"></span>
-                                </div>
-                                <div class="tags-container mt-2 flex flex-wrap gap-2"></div>
-                            </div>
-                            <div class="flex flex-col items-end">
-                                <span class="text-xs text-gray-500 dark:text-gray-400"></span>
-                                <div class="flex items-center mt-1">
-                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                                    </svg>
-                                    <span class="upvote-count ml-1 text-sm text-gray-600 dark:text-gray-300"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="author-info mt-3 flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-gray-300 dark:bg-gray-600 mr-2"></div>
-                            <span class="text-xs text-gray-600 dark:text-gray-300"></span>
-                        </div>
+        
+            <!-- Plans & Pricing Dropdown -->
+            <div class="relative group">
+                <button class="text-gray-700 hover:text-emerald-600 transition-colors flex items-center py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 rounded">
+                    Plans & Pricing
+                    <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="absolute left-0 mt-1 w-56 origin-top-left bg-white shadow-xl rounded-md border border-gray-100 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 ease-out z-50 transform-gpu">
+                    <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Individual Plans</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Team Plans</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Enterprise Solutions</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Free Resources</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Compare Plans</a>
                     </div>
                 </div>
-                
-                <!-- Pagination -->
-                <div id="pagination" class="mt-6 flex justify-center hidden">
-                    <nav class="inline-flex rounded-md shadow">
-                        <button class="pagination-btn px-3 py-1 rounded-l-md bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 disabled:opacity-50" data-page="prev">
-                            Previous
-                        </button>
-                        <div class="flex">
-                            <button class="page-number px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-l border-r border-gray-200 dark:border-gray-600" data-page="1">1</button>
-                            <button class="page-number px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-r border-gray-200 dark:border-gray-600" data-page="2">2</button>
-                            <button class="page-number px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-r border-gray-200 dark:border-gray-600" data-page="3">3</button>
-                        </div>
-                        <button class="pagination-btn px-3 py-1 rounded-r-md bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 disabled:opacity-50" data-page="next">
-                            Next
-                        </button>
-                    </nav>
+            </div>
+        
+            <!-- Learn Dropdown -->
+            <div class="relative group">
+                <button class="text-gray-700 hover:text-emerald-600 transition-colors flex items-center py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 rounded">
+                    Learn
+                    <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="absolute left-0 mt-1 w-56 origin-top-left bg-white shadow-xl rounded-md border border-gray-100 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 ease-out z-50 transform-gpu">
+                    <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Tutorials</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Documentation</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Guides</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Blog</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-emerald-600 transition-colors duration-150">Community</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Quick Links -->
-            <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mt-8">
-                <button class="quick-search px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-full transition-colors text-sm font-medium">
-                    Data Science
-                </button>
-                <button class="quick-search px-4 py-2 bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-100 rounded-full transition-colors text-sm font-medium">
-                    Machine Learning
-                </button>
-                <button class="quick-search px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-full transition-colors text-sm font-medium">
-                    Web Development
-                </button>
-            </div>
+        
+            <!-- Simple Link -->
+            <a href="#" class="text-gray-700 hover:text-emerald-600 transition-colors py-2" id="toggleSidebar">More</a>
         </div>
-    </div>
-</div>
 
-<script>
-    const searchButton = document.getElementById('searchButton');
-    const searchBox = document.getElementById('searchBox');
-    const searchModal = searchBox.querySelector('div > div');
-    const closeSearch = document.getElementById('closeSearch');
-    const header = document.querySelector('header');
-    const searchInput = document.getElementById('searchInput');
-    const searchSubmit = document.getElementById('searchSubmit');
-    const searchResults = document.getElementById('searchResults');
-    const resultsContainer = document.getElementById('resultsContainer');
-    const breadcrumb = document.getElementById('breadcrumb');
-    
-    // Filter elements
-    const postTypeFilter = document.getElementById('postTypeFilter');
-    const categoryFilter = document.getElementById('categoryFilter');
-    const sortBy = document.getElementById('sortBy');
-    const tagFilters = document.querySelectorAll('.tag-filter');
-    const quickSearchButtons = document.querySelectorAll('.quick-search');
-    
-    // Pagination elements
-    const pagination = document.getElementById('pagination');
-    const paginationButtons = document.querySelectorAll('.pagination-btn');
-    const pageNumbers = document.querySelectorAll('.page-number');
-    
-    // Sample data for demonstration
-    const sampleResults = [
-        {
-            id: 1,
-            title: "How to implement authentication in React?",
-            excerpt: "I'm trying to add JWT authentication to my React app but having trouble with the token refresh flow.",
-            type: "question",
-            category: "technology",
-            tags: ["javascript", "react", "authentication"],
-            upvotes: 24,
-            date: "2023-05-15T10:30:00Z",
-            author: "dev_user123"
-        },
-        {
-            id: 2,
-            title: "Discussion: Best practices for Python type hints",
-            excerpt: "Let's discuss how we're using type hints in our Python projects and share tips.",
-            type: "discussion",
-            category: "technology",
-            tags: ["python", "typing", "best-practices"],
-            upvotes: 15,
-            date: "2023-05-14T16:45:00Z",
-            author: "python_lover"
-        },
-        {
-            id: 3,
-            title: "New feature announcement: Dark mode support",
-            excerpt: "We're excited to announce that dark mode is now available across all platforms!",
-            type: "announcement",
-            category: "technology",
-            tags: ["ui", "feature", "dark-mode"],
-            upvotes: 42,
-            date: "2023-05-12T09:15:00Z",
-            author: "admin_user"
-        },
-        {
-            id: 4,
-            title: "Machine learning model not converging",
-            excerpt: "My CNN model for image classification isn't converging after 50 epochs. Any suggestions?",
-            type: "question",
-            category: "science",
-            tags: ["python", "machine-learning", "tensorflow"],
-            upvotes: 8,
-            date: "2023-05-10T14:20:00Z",
-            author: "ml_enthusiast"
-        },
-        {
-            id: 5,
-            title: "Monthly community meetup - June 2023",
-            excerpt: "Join us for our monthly community meetup where we'll discuss recent advancements in AI.",
-            type: "announcement",
-            category: "business",
-            tags: ["events", "ai", "community"],
-            upvotes: 31,
-            date: "2023-05-08T11:00:00Z",
-            author: "community_manager"
-        }
-    ];
-    
-    // Current search state
-    let currentSearchState = {
-        query: "",
-        postType: "all",
-        category: "all",
-        sort: "latest",
-        tags: [],
-        page: 1,
-        perPage: 3,
-        totalResults: 0
-    };
-    
-    // Calculate header height and set top position
-    function updateModalPosition() {
-        const headerHeight = header.offsetHeight;
-        searchBox.style.paddingTop = `${headerHeight}px`;
-        searchModal.style.height = `calc(100vh - ${headerHeight}px)`;
-    }
-    
-    // Update on load and resize
-    window.addEventListener('load', updateModalPosition);
-    window.addEventListener('resize', updateModalPosition);
-    
-    let isSearchOpen = false;
-    
-    function toggleSearch() {
-        isSearchOpen = !isSearchOpen;
+        <!-- Right navigation - hidden on mobile, visible on md and up -->
+        <nav class="hidden md:flex list-none gap-8 ml-auto font-medium text-base items-center">
+            <!-- Search Button -->
+            <li id="searchButton" class="relative flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <span>Search</span>
+            </li>
         
-        if (isSearchOpen) {
-            updateModalPosition();
-            searchBox.classList.remove('hidden');
-            setTimeout(() => {
-                searchModal.classList.remove('translate-y-full');
-                searchModal.classList.add('translate-y-0');
-            }, 10);
-            document.body.style.overflow = 'hidden';
-            searchInput.focus();
-        } else {
-            searchModal.classList.remove('translate-y-0');
-            searchModal.classList.add('translate-y-full');
-            setTimeout(() => {
-                searchBox.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 300);
-        }
-    }
-    
-    // Toggle when search button is clicked
-    searchButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleSearch();
-    });
-    
-    // Close when clicking outside
-    searchBox.addEventListener('click', (e) => {
-        if (e.target === searchBox) {
-            toggleSearch();
-        }
-    });
-    
-    // Close with escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && isSearchOpen) {
-            toggleSearch();
-        }
-    });
-    
-    // Close button
-    closeSearch.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleSearch();
-    });
-    
-    // Prevent modal from closing when clicking inside
-    searchModal.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-    
-    // Perform search function
-    function performSearch() {
-        const query = searchInput.value.trim();
-        const postType = postTypeFilter.value;
-        const category = categoryFilter.value;
-        const sort = sortBy.value;
-        const tags = currentSearchState.tags;
+            <!-- Help Link -->
+            <li class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Help</span>
+            </li>
         
-        // Update current search state
-        currentSearchState = {
-            ...currentSearchState,
-            query,
-            postType,
-            category,
-            sort,
-            tags,
-            page: 1
-        };
+            <!-- Account Dropdown -->
+            <li id="loginButton" class="relative group flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span>Account</span>
+            </li>
         
-        // Show breadcrumb
-        breadcrumb.classList.remove('hidden');
+            <!-- Divider -->
+            <div class="bg-gray-200 w-px h-8"></div>
         
-        // Filter results based on criteria
-        let filteredResults = sampleResults.filter(result => {
-            // Match query against title or excerpt
-            const matchesQuery = query === "" || 
-                result.title.toLowerCase().includes(query.toLowerCase()) || 
-                result.excerpt.toLowerCase().includes(query.toLowerCase());
-            
-            // Match post type
-            const matchesType = postType === "all" || result.type === postType;
-            
-            // Match category
-            const matchesCategory = category === "all" || result.category === category;
-            
-            // Match tags (if any tags are selected)
-            const matchesTags = tags.length === 0 || 
-                tags.some(tag => result.tags.includes(tag));
-            
-            return matchesQuery && matchesType && matchesCategory && matchesTags;
-        });
-        
-        // Sort results
-        switch(sort) {
-            case "latest":
-                filteredResults.sort((a, b) => new Date(b.date) - new Date(a.date));
-                break;
-            case "upvoted":
-                filteredResults.sort((a, b) => b.upvotes - a.upvotes);
-                break;
-            case "trending":
-                // Simple trending algorithm (upvotes per day since posting)
-                filteredResults.forEach(result => {
-                    const daysSincePost = (new Date() - new Date(result.date)) / (1000 * 60 * 60 * 24);
-                    result.trendingScore = result.upvotes / Math.max(1, daysSincePost);
-                });
-                filteredResults.sort((a, b) => b.trendingScore - a.trendingScore);
-                break;
-            case "relevance":
-                // Simple relevance scoring (query matches in title are more relevant)
-                if (query) {
-                    filteredResults.forEach(result => {
-                        let score = 0;
-                        if (result.title.toLowerCase().includes(query.toLowerCase())) {
-                            score += 2;
-                        }
-                        if (result.excerpt.toLowerCase().includes(query.toLowerCase())) {
-                            score += 1;
-                        }
-                        result.relevanceScore = score;
-                    });
-                    filteredResults.sort((a, b) => b.relevanceScore - a.relevanceScore);
-                }
-                break;
-        }
-        
-        // Update total results
-        currentSearchState.totalResults = filteredResults.length;
-        
-        // Paginate results
-        const startIdx = (currentSearchState.page - 1) * currentSearchState.perPage;
-        const paginatedResults = filteredResults.slice(startIdx, startIdx + currentSearchState.perPage);
-        
-        // Display results
-        displayResults(paginatedResults);
-        
-        // Update pagination
-        updatePagination();
-    }
-    
-    // Display results in the UI
-    function displayResults(results) {
-        // Clear previous results
-        resultsContainer.innerHTML = '';
-        
-        if (results.length === 0) {
-            // Show no results message
-            const noResults = document.createElement('div');
-            noResults.className = 'text-center py-8 text-gray-500 dark:text-gray-400';
-            noResults.textContent = 'No results found. Try different search terms or filters.';
-            resultsContainer.appendChild(noResults);
-        } else {
-            // Clone the sample result item for each result
-            const sampleItem = document.querySelector('.result-item');
-            
-            results.forEach(result => {
-                const item = sampleItem.cloneNode(true);
-                item.classList.remove('hidden');
-                
-                // Set content
-                item.querySelector('h3 a').textContent = result.title;
-                item.querySelector('h3 a').href = `/post/${result.id}`;
-                item.querySelector('p').textContent = result.excerpt;
-                item.querySelector('.upvote-count').textContent = result.upvotes;
-                item.querySelector('.author-info span').textContent = `Posted by ${result.author} • ${formatDate(result.date)}`;
-                
-                // Set post type badge
-                const typeBadge = item.querySelector('.post-type-badge');
-                typeBadge.textContent = result.type.charAt(0).toUpperCase() + result.type.slice(1);
-                typeBadge.className = `post-type-badge px-2 py-1 text-xs rounded-full ${
-                    result.type === 'question' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100' :
-                    result.type === 'discussion' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100' :
-                    'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100'
-                }`;
-                
-                // Set category badge
-                const categoryBadge = item.querySelector('.category-badge');
-                categoryBadge.textContent = result.category.charAt(0).toUpperCase() + result.category.slice(1);
-                categoryBadge.className = `category-badge px-2 py-1 text-xs rounded-full bg-gray-200 text-gray-800 dark:bg-gray-600 dark:text-gray-100`;
-                
-                // Set tags
-                const tagsContainer = item.querySelector('.tags-container');
-                tagsContainer.innerHTML = '';
-                result.tags.forEach(tag => {
-                    const tagElement = document.createElement('span');
-                    tagElement.className = 'px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-gray-600 dark:text-gray-200';
-                    tagElement.textContent = tag;
-                    tagsContainer.appendChild(tagElement);
-                });
-                
-                resultsContainer.appendChild(item);
-            });
-        }
-        
-        // Show results section
-        searchResults.classList.remove('hidden');
-    }
-    
-    // Format date for display
-    function formatDate(dateString) {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'short', 
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        });
-    }
-    
-    // Update pagination controls
-    function updatePagination() {
-        const totalPages = Math.ceil(currentSearchState.totalResults / currentSearchState.perPage);
-        
-        if (totalPages <= 1) {
-            pagination.classList.add('hidden');
-            return;
-        }
-        
-        pagination.classList.remove('hidden');
-        
-        // Update page numbers
-        const pageNumbersContainer = pagination.querySelector('.flex');
-        pageNumbersContainer.innerHTML = '';
-        
-        for (let i = 1; i <= totalPages; i++) {
-            const button = document.createElement('button');
-            button.className = `page-number px-3 py-1 ${
-                i === currentSearchState.page ? 
-                'bg-green-500 text-white hover:bg-green-600' : 
-                'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'
-            } border-l border-r border-gray-200 dark:border-gray-600`;
-            button.textContent = i;
-            button.dataset.page = i;
-            button.addEventListener('click', () => {
-                currentSearchState.page = i;
-                performSearch();
-            });
-            
-            if (i > 1) {
-                button.classList.add('border-l-0');
-            }
-            
-            pageNumbersContainer.appendChild(button);
-        }
-        
-        // Update prev/next buttons
-        const prevButton = pagination.querySelector('[data-page="prev"]');
-        const nextButton = pagination.querySelector('[data-page="next"]');
-        
-        prevButton.disabled = currentSearchState.page === 1;
-        nextButton.disabled = currentSearchState.page === totalPages;
-        
-        prevButton.addEventListener('click', () => {
-            if (currentSearchState.page > 1) {
-                currentSearchState.page--;
-                performSearch();
-            }
-        });
-        
-        nextButton.addEventListener('click', () => {
-            if (currentSearchState.page < totalPages) {
-                currentSearchState.page++;
-                performSearch();
-            }
-        });
-    }
-    
-    // Event listeners for search and filters
-    searchSubmit.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
-    
-    postTypeFilter.addEventListener('change', performSearch);
-    categoryFilter.addEventListener('change', performSearch);
-    sortBy.addEventListener('change', performSearch);
-    
-    // Tag filter toggle
-    tagFilters.forEach(tag => {
-        tag.addEventListener('click', () => {
-            const tagValue = tag.dataset.tag;
-            
-            if (tag.classList.contains('bg-gray-100')) {
-                // Add tag to filter
-                tag.classList.remove('bg-gray-100', 'dark:bg-gray-700');
-                tag.classList.add('bg-green-500', 'text-white');
-                currentSearchState.tags.push(tagValue);
-            } else {
-                // Remove tag from filter
-                tag.classList.add('bg-gray-100', 'dark:bg-gray-700');
-                tag.classList.remove('bg-green-500', 'text-white');
-                currentSearchState.tags = currentSearchState.tags.filter(t => t !== tagValue);
-            }
-            
-            performSearch();
-        });
-    });
-    
-    // Quick search buttons
-    quickSearchButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            searchInput.value = button.textContent.trim();
-            performSearch();
-        });
-    });
-</script>
-            
-                <!-- Help Link -->
-                <li class="flex items-center gap-2 text-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span>Help</span>
-                </li>
-            
-                <!-- Account Dropdown -->
-                <li id="loginButton" class="relative group flex items-center gap-2 text-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                    </svg>
-                    <span>Account</span>
-                    
-                    <!-- Login Modal -->
-                    <div id="loginDiv" class="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 z-[100] flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300">
-                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-md transform transition-all duration-300 scale-95">
-                            <div class="p-8" id="modalContent">
-                                <div class="flex justify-between items-center mb-6">
-                                    <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">Student Login</h2>
-                                    <button id="closeLogin" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                
-                                <form id="loginForm" class="space-y-6">
-                                    <div>
-                                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email Address</label>
-                                        <input 
-                                            type="email" 
-                                            id="email" 
-                                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-all" 
-                                            placeholder="your@email.com" 
-                                            required
-                                        />
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="username" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Username</label>
-                                        <input 
-                                            type="text" 
-                                            id="username" 
-                                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-all" 
-                                            placeholder="Enter username" 
-                                            required
-                                        />
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Password</label>
-                                        <input 
-                                            type="password" 
-                                            id="password" 
-                                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-all" 
-                                            placeholder="••••••••" 
-                                            required
-                                        />
-                                    </div>
-                                    
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 rounded dark:bg-gray-700">
-                                            <label for="remember-me" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">Remember me</label>
-                                        </div>
-                                        
-                                        <a href="#" class="text-sm text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">Forgot password?</a>
-                                    </div>
-                                    
-                                    <button 
-                                        type="submit" 
-                                        class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors"
-                                    >
-                                        Sign in
-                                    </button>
-                                    
-                                    <p id="error" class="text-red-500 dark:text-red-400 text-sm text-center mt-2"></p>
-                                    
-                                    <div class="text-center text-sm text-gray-500 dark:text-gray-400">
-                                        Don't have an account? <a href="#" class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">Register</a>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            
-                <!-- Divider -->
-                <div class="bg-gray-200 dark:bg-gray-600 w-px h-8"></div>
-            </nav>
-            
-            <script>
-                // Toggle login modal
-                const loginButton = document.getElementById('loginButton');
-                const loginDiv = document.getElementById('loginDiv');
-                const closeLogin = document.getElementById('closeLogin');
-                const modalContent = document.getElementById('modalContent');
-                
-                let isModalOpen = false;
-                
-                function toggleModal() {
-                    isModalOpen = !isModalOpen;
-                    if (isModalOpen) {
-                        loginDiv.classList.remove('opacity-0', 'invisible', 'scale-95');
-                        loginDiv.classList.add('opacity-100', 'visible', 'scale-100');
-                        document.body.style.overflow = 'hidden';
-                    } else {
-                        loginDiv.classList.remove('opacity-100', 'visible', 'scale-100');
-                        loginDiv.classList.add('opacity-0', 'invisible', 'scale-95');
-                        document.body.style.overflow = '';
-                    }
-                }
-                
-                loginButton.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    toggleModal();
-                });
-                
-                closeLogin.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    toggleModal();
-                });
-                
-                modalContent.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-                
-                loginDiv.addEventListener('click', (e) => {
-                    if (e.target === loginDiv) {
-                        toggleModal();
-                    }
-                });
-                
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && isModalOpen) {
-                        toggleModal();
-                    }
-                });
-            </script>
-            <!-- Theme toggle - always visible -->
-
-            
-            <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white">
+            <!-- Theme toggle -->
+            <button id="themeToggle" class="p-2 rounded-full bg-gray-200 text-gray-700">
                 <svg id="moonIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
                 </svg>
@@ -1020,13 +296,178 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                 </svg>
             </button>
-            
-            <!-- Mobile menu button - visible only on mobile -->
-            <button class="mobile-menu-toggle md:hidden ml-4">
-                <i class="fas fa-bars"></i>
+        </nav>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav hidden md:hidden fixed inset-0 bg-white z-[998] pt-16 px-4 overflow-y-auto">
+        <!-- Close Button -->
+        <button class="mobile-close-btn absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100">
+            <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        
+        <div class="space-y-2">
+            <!-- Updated Mobile Dropdown Structure -->
+            <div class="mobile-dropdown-group">
+                <button class="mobile-dropdown-btn flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span>Education</span>
+                    <svg class="mobile-dropdown-icon w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-4">
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Online Courses</a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Certification Programs</a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Study Materials</a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Academic Resources</a>
+                </div>
+            </div>
+    
+            <!-- Repeat for other dropdowns -->
+            <div class="mobile-dropdown-group">
+                <button class="mobile-dropdown-btn flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span>Plans & Pricing</span>
+                    <svg class="mobile-dropdown-icon w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-4">
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Individual Plans</a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Team Plans</a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Enterprise Solutions</a>
+                </div>
+            </div>
+
+            <div class="mobile-dropdown-group">
+                <button class="mobile-dropdown-btn flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                    <span>Learn</span>
+                    <svg class="mobile-dropdown-icon w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-4">
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Individual Plans</a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Team Plans</a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg">Enterprise Solutions</a>
+                </div>
+            </div>
+    
+            <!-- "More" link that opens sidebar -->
+            <button id="mobileToggleSidebar" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                More
             </button>
+    
+            <!-- Other mobile menu items -->
+            <a href="#" class="block py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Help</a>
+            <a href="#" class="block py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Account</a>
         </div>
-    </header>
+    </div>
+</header>
+
+<!-- Add this overlay for sidebar (place it right after the header) -->
+<div id="sidebarOverlay" class="fixed inset-0 bg bg-opacity-50 z-[999] hidden"></div>
+
+<div id="sidebar" class="sidebar fixed top-0 left-[-400px] w-[350px] h-full bg-white shadow-xl transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] z-[1000] overflow-hidden">
+    <!-- Close button with better positioning -->
+    <button id="closeSidebar" class="absolute top-5 right-5 p-1 rounded-full hover:bg-gray-100 transition-colors duration-200 z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+    
+    <!-- Sidebar content container with padding -->
+    <div class="h-full flex flex-col p-6 pt-14">
+        <!-- Header section -->
+        <div class="pb-6 border-b border-gray-100">
+            <div class="flex items-center gap-3 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <h2 class="text-xl font-semibold text-gray-800">Community Hub</h2>
+            </div>
+            <p class="text-sm text-gray-500">Connect, discuss, and collaborate with peers</p>
+        </div>
+        
+        <!-- Navigation links with better spacing and icons -->
+        <nav class="flex-1 py-6 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
+                <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                    </svg>
+                </span>
+                <span class="font-medium">Announcements</span>
+            </a>
+            
+            <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
+                <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                </span>
+                <span class="font-medium">General Discussions</span>
+            </a>
+            
+            <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
+                <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </span>
+                <span class="font-medium">Study Resources</span>
+            </a>
+            
+            <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
+                <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                </span>
+                <span class="font-medium">Assignments Help</span>
+            </a>
+            
+            <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
+                <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </span>
+                <span class="font-medium">Group Projects</span>
+            </a>
+            
+            <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
+                <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </span>
+                <span class="font-medium">Career Advice</span>
+            </a>
+            
+            <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
+                <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
+                <span class="font-medium">Ask a Question</span>
+            </a>
+        </nav>
+        
+        <!-- Create Post button with better styling -->
+        <button class="mt-auto w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            Create New Post
+        </button>
+    </div>
+</div>
+
+    <script src="header.js"></script>
+    <link rel="stylesheet" href="header.css">
 
     <main class="relative w-full">
         <!-- Hero Slider Section -->
@@ -1134,101 +575,8 @@
                 </div>
             </div>
         </div>
-        
-        <style>
-            .slide {
-                opacity: 0;
-                z-index: 1;
-                transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
-                transform: scale(1.1);
-            }
-            
-            .slide.active {
-                opacity: 1;
-                z-index: 2;
-            }
-            
-            .slide-wrapper:hover .slide.active {
-                transform: scale(1.05);
-            }
-            
-            .indicator {
-                transition: all 0.3s ease;
-            }
-            
-            .indicator.active {
-                background-color: white;
-                transform: scale(1.2);
-            }
-        </style>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const slides = document.querySelectorAll('.slide');
-                const indicators = document.querySelectorAll('.indicator');
-                const prevBtn = document.getElementById('prev');
-                const nextBtn = document.getElementById('next');
-                let currentIndex = 0;
-                
-                // Initialize slider
-                function initSlider() {
-                    updateSlide();
-                }
-                
-                // Update slide visibility and indicators
-                function updateSlide() {
-                    // Update slides
-                    slides.forEach((slide, index) => {
-                        if (index === currentIndex) {
-                            slide.classList.add('active');
-                        } else {
-                            slide.classList.remove('active');
-                        }
-                    });
-                    
-                    // Update indicators
-                    indicators.forEach((indicator, index) => {
-                        if (index === currentIndex) {
-                            indicator.classList.add('active');
-                        } else {
-                            indicator.classList.remove('active');
-                        }
-                    });
-                }
-                
-                // Next slide
-                function nextSlide() {
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    updateSlide();
-                }
-                
-                // Previous slide
-                function prevSlide() {
-                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                    updateSlide();
-                }
-                
-                // Go to specific slide
-                function goToSlide(index) {
-                    currentIndex = index;
-                    updateSlide();
-                }
-                
-                // Event listeners
-                nextBtn.addEventListener('click', nextSlide);
-                prevBtn.addEventListener('click', prevSlide);
-                
-                indicators.forEach(indicator => {
-                    indicator.addEventListener('click', function() {
-                        const index = parseInt(this.getAttribute('data-index'));
-                        goToSlide(index);
-                    });
-                });
-                
-                // Initialize slider
-                initSlider();
-            });
-        </script>
+       
+      
 
     
         <!-- Welcome Section -->
@@ -1380,13 +728,13 @@
 
         <div class="page4 page min-h-screen py-8 px-4 sm:px-6 lg:px-8" id="page4">
             <div class="max-w-4xl mx-auto">
-                <!-- Header with more professional animation -->
-                <div class="text-center mb-12 wow animate__fadeInDown" data-wow-duration="0.8s">
+                <!-- Header -->
+                <div class="text-center mb-12 wow animate__animated animate__fadeInDown" data-wow-duration="0.8s">
                     <h1 class="text-4xl font-bold text-indigo-700 mb-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
                         Campus Announcements
                     </h1>
-                    <p class="text-lg text-gray-600 wow animate__fadeIn" data-wow-delay="0.3s">Stay updated with the latest news and events</p>
-                    <div class="mt-6 wow animate__fadeIn" data-wow-delay="0.5s">
+                    <p class="text-lg text-gray-600 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">Stay updated with the latest news and events</p>
+                    <div class="mt-6 wow animate__animated animate__fadeIn" data-wow-delay="0.5s">
                         <button id="newAnnouncementBtn" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
@@ -1396,14 +744,14 @@
                     </div>
                 </div>
     
-                <!-- Announcement Cards Container with staggered animation -->
-                <div class="space-y-6 wow animate__fadeIn" id="announcementsContainer" data-wow-delay="0.7s">
+                <!-- Announcement Cards Container -->
+                <div class="space-y-6" id="announcementsContainer">
                     <!-- Announcement cards will be dynamically inserted here -->
                 </div>
     
-                <!-- New Announcement Modal with more professional animation -->
+                <!-- New Announcement Modal -->
                 <div id="announcementModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden backdrop-blur-sm">
-                    <div class="bg-white rounded-xl p-8 w-full max-w-md wow animate__zoomIn" data-wow-duration="0.4s">
+                    <div class="bg-white rounded-xl p-8 w-full max-w-md wow animate__animated animate__zoomIn" data-wow-duration="0.4s">
                         <div class="flex justify-between items-center mb-6">
                             <h3 class="text-2xl font-semibold text-gray-800">Create New Announcement</h3>
                             <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700 transition-colors duration-200">
@@ -1443,7 +791,6 @@
             </div>
         </div>
     
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         
         <!-- Community Feed Section -->
         <div class="page2 page w-full min-h-screen flex flex-col gap-12 py-16 px-8" id="page2">
@@ -3686,107 +3033,10 @@
         
     </main>
 
-    <div id="sidebar" class="sidebar fixed top-0 left-[-400px] w-[350px] h-full bg-white shadow-xl transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] z-[1000] overflow-hidden">
-        <!-- Close button with better positioning -->
-        <button id="closeSidebar" class="absolute top-5 right-5 p-1 rounded-full hover:bg-gray-100 transition-colors duration-200 z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-        
-        <!-- Sidebar content container with padding -->
-        <div class="h-full flex flex-col p-6 pt-14">
-            <!-- Header section -->
-            <div class="pb-6 border-b border-gray-100">
-                <div class="flex items-center gap-3 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <h2 class="text-xl font-semibold text-gray-800">Community Hub</h2>
-                </div>
-                <p class="text-sm text-gray-500">Connect, discuss, and collaborate with peers</p>
-            </div>
-            
-            <!-- Navigation links with better spacing and icons -->
-            <nav class="flex-1 py-6 space-y-1 overflow-y-auto">
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
-                    <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-                        </svg>
-                    </span>
-                    <span class="font-medium">Announcements</span>
-                </a>
-                
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
-                    <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
-                    </span>
-                    <span class="font-medium">General Discussions</span>
-                </a>
-                
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
-                    <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                    </span>
-                    <span class="font-medium">Study Resources</span>
-                </a>
-                
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
-                    <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                        </svg>
-                    </span>
-                    <span class="font-medium">Assignments Help</span>
-                </a>
-                
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
-                    <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                    </span>
-                    <span class="font-medium">Group Projects</span>
-                </a>
-                
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
-                    <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </span>
-                    <span class="font-medium">Career Advice</span>
-                </a>
-                
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 group">
-                    <span class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-200 transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </span>
-                    <span class="font-medium">Ask a Question</span>
-                </a>
-            </nav>
-            
-            <!-- Create Post button with better styling -->
-            <button class="mt-auto w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                </svg>
-                Create New Post
-            </button>
-        </div>
-    </div>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    
 
-
-
-
-    </div>
     
     <footer class="bg-gradient-to-b from-white to-gray-50 text-gray-800 py-12 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -3955,6 +3205,7 @@
    
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
 </body>
 </html>
