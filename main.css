@@ -1,0 +1,296 @@
+/* Add these styles to your existing CSS */
+/* Page1*/
+
+@media (max-width: 768px) {
+    #prev, #next {
+        display: none;
+    }
+}
+
+/* Keep all other existing CSS */
+
+.slide {
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+    transform: scale(1.1);
+    will-change: transform, opacity;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+    transform: scale(1.05);
+}
+
+.slide-wrapper:hover .slide.active {
+    transform: scale(1.03);
+}
+
+.indicator {
+    transition: all 0.3s ease;
+    will-change: transform;
+}
+
+.indicator.active {
+    background-color: white;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Mobile navigation buttons */
+@media (max-width: 768px) {
+    #prev, #next {
+        padding: 2.5rem 0.5rem;
+        background-color: rgba(0, 0, 0, 0.7);
+        transform: translateY(-50%) scale(0.9);
+    }
+    
+    #prev {
+        left: 0.5rem;
+    }
+    
+    #next {
+        right: 0.5rem;
+    }
+    
+    #prev:hover, #next:hover {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.slide-content {
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.slide-title {
+    animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.slide-subtitle {
+    animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.slide-buttons {
+    animation: fadeInUp 1s ease-out 1.1s both;
+}
+
+.slide-stats {
+    animation: fadeInUp 1s ease-out 1.3s both;
+}
+
+
+/*Page 2*/
+
+
+/* Base styles */
+.page2 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 4rem 2rem;
+}
+
+/* Typography */
+.font-bold {
+    font-weight: bold;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+/* Card styles */
+.card {
+    min-width: 85vw;
+    height: 70vh;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: scale(1.02);
+}
+
+/* Color gradients */
+.from-blue-600 {
+    background-image: linear-gradient(to bottom right, #2563eb, var(--tw-gradient-to));
+}
+
+.to-indigo-700 {
+    --tw-gradient-to: #4338ca;
+}
+
+.from-pink-600 {
+    background-image: linear-gradient(to bottom right, #db2777, var(--tw-gradient-to));
+}
+
+.to-rose-600 {
+    --tw-gradient-to: #e11d48;
+}
+
+.from-emerald-600 {
+    background-image: linear-gradient(to bottom right, #059669, var(--tw-gradient-to));
+}
+
+.to-teal-600 {
+    --tw-gradient-to: #0d9488;
+}
+
+.from-purple-600 {
+    background-image: linear-gradient(to bottom right, #9333ea, var(--tw-gradient-to));
+}
+
+.to-fuchsia-600 {
+    --tw-gradient-to: #c026d3;
+}
+
+.from-amber-500 {
+    background-image: linear-gradient(to bottom right, #f59e0b, var(--tw-gradient-to));
+}
+
+.to-orange-600 {
+    --tw-gradient-to: #ea580c;
+}
+
+/* Animations */
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-float1 {
+    animation: float1 6s ease-in-out infinite;
+}
+
+.animate-float2 {
+    animation: float2 8s ease-in-out infinite 1s;
+}
+
+.animate-float3 {
+    animation: float3 7s ease-in-out infinite 2s;
+}
+
+@keyframes float1 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(5px); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-15px) translateX(-5px); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(5px) translateX(10px); }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+    50% { transform: translateY(0); animation-timing-function: cubic-bezier(0,0,0.2,1); }
+}
+
+/* Overlay styles */
+.group-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    padding: 2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+}
+
+.group-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .text-4xl {
+        font-size: 2.5rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.875rem;
+    }
+    
+    .card {
+        min-width: 35vw;
+    }
+}
