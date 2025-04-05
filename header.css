@@ -1,0 +1,39 @@
+/* Mobile Dropdown Styles */
+.mobile-dropdown-group {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.mobile-dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.2s ease;
+    opacity: 0;
+}
+
+.mobile-dropdown-content:not(.hidden) {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.mobile-dropdown-icon {
+    transition: transform 0.2s ease;
+}
+
+.mobile-dropdown-icon.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Sidebar Overlay */
+#sidebarOverlay {
+    transition: opacity 0.3s ease;
+}
+
+/* Mobile Menu Animation */
+.mobile-nav {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav:not(.hidden) {
+    transform: translateX(0);
+    opacity: 1;
+}
