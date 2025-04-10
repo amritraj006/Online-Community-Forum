@@ -105,3 +105,52 @@
 
 
 /* Base styles */
+
+
+
+/* Video Modal Styles */
+#videoModal {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#videoModal.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Animation for modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#videoModal.show {
+    animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+/* Responsive video sizing */
+@media (max-width: 640px) {
+    #videoPlayer {
+        height: 250px !important;
+    }
+}
+
+/* Existing slide styles remain the same */
+.slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Rest of your existing styles... */
