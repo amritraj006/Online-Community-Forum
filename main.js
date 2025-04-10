@@ -397,3 +397,83 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Video Modal functionality
+    const videoModal = document.getElementById('videoModal');
+    const watchVideoBtn = document.getElementById('watchVideoBtn');
+    const closeVideoBtn = document.getElementById('closeVideoBtn');
+    const videoPlayer = document.getElementById('videoPlayer');
+    
+    // Toggle video modal
+    watchVideoBtn.addEventListener('click', function() {
+        videoModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    closeVideoBtn.addEventListener('click', function() {
+        videoModal.classList.remove('show');
+        document.body.style.overflow = '';
+        // Stop the video when modal is closed
+        videoPlayer.src = videoPlayer.src; // This resets the iframe
+    });
+    
+    // Close modal when clicking outside the video
+    videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) {
+            videoModal.classList.remove('show');
+            document.body.style.overflow = '';
+            videoPlayer.src = videoPlayer.src;
+        }
+    });
+    
+    // Existing slideshow functionality
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        currentSlide = index;
+    }
+    
+    function nextSlide() {
+        let newIndex = (currentSlide + 1) % slides.length;
+        showSlide(newIndex);
+    }
+    
+    function prevSlide() {
+        let newIndex = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(newIndex);
+    }
+    
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    indicators.forEach(indicator => {
+        indicator.addEventListener('click', function() {
+            showSlide(parseInt(this.getAttribute('data-index')));
+        });
+    });
+    
+    // Auto-advance slides
+    let slideInterval = setInterval(nextSlide, 5000);
+    
+    // Pause on hover
+    const slideWrapper = document.querySelector('.slide-wrapper');
+    slideWrapper.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    slideWrapper.addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 5000));
+});
+
+
+
