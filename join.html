@@ -635,6 +635,67 @@
                 margin-bottom: 1rem;
             }
         }
+
+
+        /* Enhanced Modal Animation */
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal-content {
+    animation: scaleIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modal-icon {
+    animation: bounceIn 0.5s ease-out;
+}
+
+/* Form Submission Animation */
+.form-submitting {
+    animation: pulseSubmit 0.5s ease-in-out;
+}
+
+@keyframes pulseSubmit {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Success Button Animation */
+.btn-success {
+    transform: scale(1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-success:hover {
+    transform: scale(1.1);
+}
     </style>
 </head>
 <body>
@@ -803,190 +864,203 @@
         </div>
     </div>
 
-    <script>
-        // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 20;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Random size between 5px and 15px
-                const size = Math.random() * 10 + 5;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // Random position
-                particle.style.left = `${Math.random() * 100}vw`;
-                particle.style.top = `${Math.random() * 100}vh`;
-                
-                // Random animation duration between 10s and 20s
-                const duration = Math.random() * 10 + 10;
-                particle.style.animationDuration = `${duration}s`;
-                
-                // Random delay
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
+   <script>
+    // Create floating particles
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 20;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+        const size = Math.random() * 10 + 5;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.top = `${Math.random() * 100}vh`;
+
+        const duration = Math.random() * 10 + 10;
+        particle.style.animationDuration = `${duration}s`;
+
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Animate stats counter
+function animateStats() {
+    const students = document.getElementById('studentsCount');
+    const universities = document.getElementById('universitiesCount');
+    const resources = document.getElementById('resourcesCount');
+    const countries = document.getElementById('countriesCount');
+
+    const targetStudents = 12500;
+    const targetUnis = 350;
+    const targetResources = 8500;
+    const targetCountries = 45;
+
+    const duration = 2000;
+    const interval = 20;
+    const steps = duration / interval;
+
+    const incrementStudents = targetStudents / steps;
+    const incrementUnis = targetUnis / steps;
+    const incrementResources = targetResources / steps;
+    const incrementCountries = targetCountries / steps;
+
+    let currentStudents = 0;
+    let currentUnis = 0;
+    let currentResources = 0;
+    let currentCountries = 0;
+
+    const timer = setInterval(() => {
+        currentStudents += incrementStudents;
+        currentUnis += incrementUnis;
+        currentResources += incrementResources;
+        currentCountries += incrementCountries;
+
+        students.textContent = Math.floor(currentStudents).toLocaleString();
+        universities.textContent = Math.floor(currentUnis).toLocaleString();
+        resources.textContent = Math.floor(currentResources).toLocaleString();
+        countries.textContent = Math.floor(currentCountries);
+
+        if (currentStudents >= targetStudents) {
+            clearInterval(timer);
+            students.textContent = targetStudents.toLocaleString();
+            universities.textContent = targetUnis.toLocaleString();
+            resources.textContent = targetResources.toLocaleString();
+            countries.textContent = targetCountries;
         }
+    }, interval);
+}
+
+// Form validation
+function validateForm(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Reset errors
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('universityError').textContent = '';
+    document.getElementById('majorError').textContent = '';
+
+    // Get values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const university = document.getElementById('university').value.trim();
+    const major = document.getElementById('major').value.trim();
+
+    let isValid = true;
+
+    // Validate name
+    if (name === '') {
+        document.getElementById('nameError').textContent = 'Full name is required';
+        isValid = false;
+    } else if (name.length < 3) {
+        document.getElementById('nameError').textContent = 'Name must be at least 3 characters';
+        isValid = false;
+    }
+
+    // Validate email
+    if (email === '') {
+        document.getElementById('emailError').textContent = 'Email is required';
+        isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById('emailError').textContent = 'Invalid email format';
+        isValid = false;
+    }
+
+    // Validate university
+    if (university === '') {
+        document.getElementById('universityError').textContent = 'University is required';
+        isValid = false;
+    }
+
+    // Validate major
+    if (major === '') {
+        document.getElementById('majorError').textContent = 'Major is required';
+        isValid = false;
+    }
+
+    // If valid, show success modal with animation
+    if (isValid) {
+        const form = document.getElementById('joinForm');
+        const submitBtn = document.querySelector('.btn');
         
-        // Animate stats counter
-        function animateStats() {
-            const students = document.getElementById('studentsCount');
-            const universities = document.getElementById('universitiesCount');
-            const resources = document.getElementById('resourcesCount');
-            const countries = document.getElementById('countriesCount');
-            
-            const targetStudents = 12500;
-            const targetUnis = 350;
-            const targetResources = 8500;
-            const targetCountries = 45;
-            
-            const duration = 2000; // 2 seconds
-            const interval = 20; // ms
-            const steps = duration / interval;
-            
-            const incrementStudents = targetStudents / steps;
-            const incrementUnis = targetUnis / steps;
-            const incrementResources = targetResources / steps;
-            const incrementCountries = targetCountries / steps;
-            
-            let currentStudents = 0;
-            let currentUnis = 0;
-            let currentResources = 0;
-            let currentCountries = 0;
-            
-            const timer = setInterval(() => {
-                currentStudents += incrementStudents;
-                currentUnis += incrementUnis;
-                currentResources += incrementResources;
-                currentCountries += incrementCountries;
-                
-                students.textContent = Math.floor(currentStudents).toLocaleString();
-                universities.textContent = Math.floor(currentUnis).toLocaleString();
-                resources.textContent = Math.floor(currentResources).toLocaleString();
-                countries.textContent = Math.floor(currentCountries);
-                
-                if (currentStudents >= targetStudents) {
-                    clearInterval(timer);
-                    students.textContent = targetStudents.toLocaleString();
-                    universities.textContent = targetUnis.toLocaleString();
-                    resources.textContent = targetResources.toLocaleString();
-                    countries.textContent = targetCountries;
-                }
-            }, interval);
-        }
-        
-        // Form validation
-        function validateForm() {
-            // Reset errors
-            document.getElementById('nameError').textContent = '';
-            document.getElementById('emailError').textContent = '';
-            document.getElementById('universityError').textContent = '';
-            document.getElementById('majorError').textContent = '';
-            
-            // Get values
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const university = document.getElementById('university').value.trim();
-            const major = document.getElementById('major').value.trim();
-            
-            let isValid = true;
-            
-            // Validate name
-            if (name === '') {
-                document.getElementById('nameError').textContent = 'Full name is required';
-                isValid = false;
-            } else if (name.length < 3) {
-                document.getElementById('nameError').textContent = 'Name must be at least 3 characters';
-                isValid = false;
-            }
-            
-            // Validate email
-            if (email === '') {
-                document.getElementById('emailError').textContent = 'Email is required';
-                isValid = false;
-            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                document.getElementById('emailError').textContent = 'Invalid email format';
-                isValid = false;
-            }
-            
-            // Validate university
-            if (university === '') {
-                document.getElementById('universityError').textContent = 'University is required';
-                isValid = false;
-            }
-            
-            // Validate major
-            if (major === '') {
-                document.getElementById('majorError').textContent = 'Major is required';
-                isValid = false;
-            }
-            
-            // If valid, show success modal
-            if (isValid) {
-                const modal = document.getElementById('successModal');
-                modal.style.display = 'flex';
-                
-                // Add button effect
-                const submitBtn = document.querySelector('.btn');
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Success!';
-                submitBtn.style.background = 'linear-gradient(135deg, var(--success), #3a86ff)';
-                
-                // Reset form after delay
-                setTimeout(() => {
-                    document.getElementById('joinForm').reset();
-                    submitBtn.innerHTML = '<span class="btn-text">Join Now</span><i class="fas fa-arrow-right btn-icon" style="margin-left: 8px;"></i>';
-                    submitBtn.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
-                }, 2000);
-            }
-            
-            return false; // Prevent form submission for this demo
-        }
-        
-        // Close modal
-        document.getElementById('closeModal').addEventListener('click', function() {
-            document.getElementById('successModal').style.display = 'none';
-        });
-        
-        document.getElementById('modalButton').addEventListener('click', function() {
-            document.getElementById('successModal').style.display = 'none';
-            window.location.href = 'home.html';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
+        // Add submitting animation
+        form.classList.add('form-submitting');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Joining...';
+
+        setTimeout(() => {
+            form.classList.remove('form-submitting');
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Success!';
+            submitBtn.style.background = 'linear-gradient(135deg, var(--success), #3a86ff)';
+            submitBtn.classList.add('btn-success');
+
+            // Show success modal
             const modal = document.getElementById('successModal');
-            if (event.target === modal) {
+            modal.style.display = 'flex';
+
+            // Reset form
+            form.reset();
+
+            // Automatically redirect after a delay
+            setTimeout(() => {
                 modal.style.display = 'none';
-            }
+                window.location.href = 'home.html';
+            }, 3000); // Redirect after 3 seconds
+        }, 1000); // Simulate processing time
+    }
+
+    return false;
+}
+
+// Close modal
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('successModal').style.display = 'none';
+});
+
+document.getElementById('modalButton').addEventListener('click', function() {
+    document.getElementById('successModal').style.display = 'none';
+    window.location.href = 'home.html';
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('successModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// Initialize on page load
+window.onload = function() {
+    createParticles();
+    animateStats();
+
+    // Add form submission handler
+    document.getElementById('joinForm').addEventListener('submit', validateForm);
+
+    // Add hover effect to benefit cards
+    const benefitCards = document.querySelectorAll('.benefit-card');
+    benefitCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.1)';
         });
-        
-        // Initialize on page load
-        window.onload = function() {
-            createParticles();
-            animateStats();
-            
-            // Add form submission handler
-            document.getElementById('joinForm').addEventListener('submit', validateForm);
-            
-            // Add hover effect to benefit cards
-            const benefitCards = document.querySelectorAll('.benefit-card');
-            benefitCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    const icon = this.querySelector('i');
-                    icon.style.transform = 'scale(1.1)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    const icon = this.querySelector('i');
-                    icon.style.transform = 'scale(1)';
-                });
-            });
-        };
-    </script>
+
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+};
+   </script>
+
+
 </body>
 </html>
