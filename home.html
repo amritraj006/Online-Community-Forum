@@ -362,7 +362,11 @@
 
     <main class="relative w-full">
         <!-- Hero Slider Section -->
-        <div class="page1 page w-full bg-white h-[100vh] relative overflow-hidden" id="page1">
+  <div class="page1 page w-full bg-white h-[100vh] relative overflow-hidden" id="page1">
+            <!-- Preload critical resources -->
+            <link rel="preload" href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" as="image">
+            <link rel="preload" href="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" as="image">
+            
             <div class="mx-auto top-0 overflow-hidden w-full h-full relative">
                 <!-- Slides with student-focused images -->
                 <div class="slide-wrapper w-full h-full relative">
@@ -377,17 +381,17 @@
                     <!-- Slides -->
                     <div class="parallax-container w-full h-full overflow-hidden">
                         <img class="slide active w-full h-full absolute transition-all duration-1000 ease-in-out object-cover transform scale-110" 
-                        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="0">
+                        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="0" loading="eager">
                         <img class="slide w-full h-full absolute transition-all duration-1000 ease-in-out object-cover transform scale-110" 
-                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="1">
+                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="1" loading="lazy">
                         <img class="slide w-full h-full absolute transition-all duration-1000 ease-in-out object-cover transform scale-110" 
-                        src="https://images.unsplash.com/photo-1524179091875-b494986b5e9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="2">
+                        src="https://images.unsplash.com/photo-1524179091875-b494986b5e9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="2" loading="lazy">
                         <img class="slide w-full h-full absolute transition-all duration-1000 ease-in-out object-cover transform scale-110" 
-                        src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="3">
+                        src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="3" loading="lazy">
                         <img class="slide w-full h-full absolute transition-all duration-1000 ease-in-out object-cover transform scale-110" 
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" data-index="4">
+                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" data-index="4" loading="lazy">
                         <img class="slide w-full h-full absolute transition-all duration-1000 ease-in-out object-cover transform scale-110" 
-                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="5">
+                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-index="5" loading="lazy">
                     </div>
                     
                     <!-- Navigation buttons with hover animations -->
@@ -497,7 +501,6 @@
             <!-- Floating particles for background (added with JS) -->
             <canvas id="particlesCanvas" class="absolute inset-0 z-0 w-full h-full pointer-events-none"></canvas>
         </div>
-
 
     
         <!-- Welcome Section -->
