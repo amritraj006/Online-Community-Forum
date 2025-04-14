@@ -1,187 +1,225 @@
 //Page1 Js
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Slider functionality
-    const slides = document.querySelectorAll('.slide');
-    const indicators = document.querySelectorAll('.indicator');
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-    let currentIndex = 0;
-    let autoSlideInterval;
-    const slideDuration = 6000; // 6 seconds per slide
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    // Initialize slider
-    function initSlider() {
-        updateSlide();
-        startAutoSlide();
-        initParticles();
-        setupVideoModal();
-        addSwipeSupport();
+class Slider {
+    constructor() {
+        this.slides = document.querySelectorAll('.slide');
+        this.indicators = document.querySelectorAll('.indicator');
+        this.prevBtn = document.getElementById('prev');
+        this.nextBtn = document.getElementById('next');
+        this.currentIndex = 0;
+        this.autoSlideInterval = null;
+        this.slideDuration = 6000;
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        this.isAnimating = false;
+        
+        this.init();
     }
-
-    // Add touch events for mobile swipe
-    function addSwipeSupport() {
+    
+    init() {
+        // Preload images
+        this.preloadImages();
+        
+        // Initialize components
+        this.updateSlide();
+        this.startAutoSlide();
+        this.setupVideoModal();
+        this.addSwipeSupport();
+        
+        // Initialize particles only after main content is loaded
+        window.addEventListener('load', () => {
+            this.initParticles();
+        });
+        
+        // Event listeners
+        if (this.prevBtn && this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.nextSlide());
+            this.prevBtn.addEventListener('click', () => this.prevSlide());
+        }
+        
+        this.indicators.forEach(indicator => {
+            indicator.addEventListener('click', () => {
+                const index = parseInt(indicator.getAttribute('data-index'));
+                this.goToSlide(index);
+            });
+        });
+        
+        // Pause auto-slide when window loses focus
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(this.autoSlideInterval);
+            } else {
+                this.resetAutoSlide();
+            }
+        });
+    }
+    
+    preloadImages() {
+        // This is already handled by the HTML preload links
+        // Additional images can be preloaded here if needed
+        const images = Array.from(this.slides).map(slide => slide.src);
+        images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }
+    
+    addSwipeSupport() {
         const slider = document.querySelector('.slide-wrapper');
         
         slider.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            clearInterval(autoSlideInterval);
+            this.touchStartX = e.changedTouches[0].screenX;
+            clearInterval(this.autoSlideInterval);
         }, {passive: true});
         
         slider.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-            startAutoSlide();
+            this.touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe();
+            this.startAutoSlide();
         }, {passive: true});
     }
-
-    // Handle swipe gestures
-    function handleSwipe() {
+    
+    handleSwipe() {
+        if (this.isAnimating) return;
+        
         const swipeThreshold = 50;
         
-        if (touchStartX - touchEndX > swipeThreshold) {
-            nextSlide();
-        } else if (touchEndX - touchStartX > swipeThreshold) {
-            prevSlide();
+        if (this.touchStartX - this.touchEndX > swipeThreshold) {
+            this.nextSlide();
+        } else if (this.touchEndX - this.touchStartX > swipeThreshold) {
+            this.prevSlide();
         }
     }
-
-    // Update slide visibility and indicators
-    function updateSlide() {
-        slides.forEach((slide, index) => {
-            if (index === currentIndex) {
-                slide.classList.add('active');
-                slide.style.animation = 'zoomIn 1.5s ease-out forwards';
-            } else {
-                slide.classList.remove('active');
-                slide.style.animation = '';
-            }
-        });
+    
+    updateSlide() {
+        this.isAnimating = true;
         
-        indicators.forEach((indicator, index) => {
-            if (index === currentIndex) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
+        // Use requestAnimationFrame for smoother transitions
+        requestAnimationFrame(() => {
+            this.slides.forEach((slide, index) => {
+                if (index === this.currentIndex) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            
+            this.indicators.forEach((indicator, index) => {
+                if (index === this.currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+            
+            this.isAnimating = false;
         });
     }
-
-    // Next slide
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlide();
-        resetAutoSlide();
+    
+    nextSlide() {
+        if (this.isAnimating) return;
+        
+        this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+        this.updateSlide();
+        this.resetAutoSlide();
     }
-
-    // Previous slide
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlide();
-        resetAutoSlide();
+    
+    prevSlide() {
+        if (this.isAnimating) return;
+        
+        this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+        this.updateSlide();
+        this.resetAutoSlide();
     }
-
-    // Go to specific slide
-    function goToSlide(index) {
-        currentIndex = index;
-        updateSlide();
-        resetAutoSlide();
+    
+    goToSlide(index) {
+        if (this.isAnimating) return;
+        
+        this.currentIndex = index;
+        this.updateSlide();
+        this.resetAutoSlide();
     }
-
-    // Auto-slide functionality
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, slideDuration);
+    
+    startAutoSlide() {
+        this.autoSlideInterval = setInterval(() => this.nextSlide(), this.slideDuration);
     }
-
-    function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
+    
+    resetAutoSlide() {
+        clearInterval(this.autoSlideInterval);
+        this.startAutoSlide();
     }
-
-    // Video modal functionality
-    function setupVideoModal() {
+    
+    setupVideoModal() {
         const videoModal = document.getElementById('videoModal');
         const watchVideoBtn = document.getElementById('watchVideoBtn');
         const closeVideoBtn = document.getElementById('closeVideoBtn');
         const videoPlayer = document.getElementById('videoPlayer');
-
+        
+        if (!watchVideoBtn || !closeVideoBtn) return;
+        
         watchVideoBtn.addEventListener('click', () => {
             videoModal.classList.add('show');
             document.body.style.overflow = 'hidden';
-            videoModal.querySelector('div').classList.remove('scale-95');
-            videoModal.querySelector('div').classList.add('scale-100');
+            videoPlayer.src += '&autoplay=1';
         });
-
+        
         closeVideoBtn.addEventListener('click', () => {
             videoModal.classList.remove('show');
             document.body.style.overflow = '';
-            videoModal.querySelector('div').classList.add('scale-95');
-            videoModal.querySelector('div').classList.remove('scale-100');
-            
-            // Reset video when closing
-            videoPlayer.src = videoPlayer.src;
+            videoPlayer.src = videoPlayer.src.replace('&autoplay=1', '');
         });
-
-        // Close modal when clicking outside
+        
         videoModal.addEventListener('click', (e) => {
             if (e.target === videoModal) {
                 videoModal.classList.remove('show');
                 document.body.style.overflow = '';
-                videoModal.querySelector('div').classList.add('scale-95');
-                videoModal.querySelector('div').classList.remove('scale-100');
-                
-                // Reset video when closing
-                videoPlayer.src = videoPlayer.src;
+                videoPlayer.src = videoPlayer.src.replace('&autoplay=1', '');
             }
         });
     }
-
-    // Particle background effect
-    function initParticles() {
+    
+    initParticles() {
         const canvas = document.getElementById('particlesCanvas');
+        if (!canvas) return;
+        
         const ctx = canvas.getContext('2d');
         let particles = [];
-        const particleCount = window.innerWidth < 768 ? 30 : 60;
-
+        const particleCount = window.innerWidth < 768 ? 20 : 50; // Reduced for performance
+        
         // Set canvas size
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
-
-        // Particle constructor
-        function Particle() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 3 + 1;
-            this.speedX = Math.random() * 1 - 0.5;
-            this.speedY = Math.random() * 1 - 0.5;
-            this.color = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1})`;
+        
+        // Particle class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1; // Smaller particles
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.color = `rgba(255, 255, 255, ${Math.random() * 0.2 + 0.1})`; // More transparent
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                
+                // Bounce off edges
+                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+            }
+            
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
-
-        // Update particle position
-        Particle.prototype.update = function() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-
-            if (this.x > canvas.width || this.x < 0) {
-                this.speedX = -this.speedX;
-            }
-            if (this.y > canvas.height || this.y < 0) {
-                this.speedY = -this.speedY;
-            }
-        };
-
-        // Draw particle
-        Particle.prototype.draw = function() {
-            ctx.fillStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        };
-
+        
         // Create particles
         function init() {
             particles = [];
@@ -189,71 +227,64 @@ document.addEventListener('DOMContentLoaded', function() {
                 particles.push(new Particle());
             }
         }
-
-        // Animation loop
+        
+        // Animation loop with optimized drawing
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
+            // Update and draw particles
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
-                
-                // Connect particles
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 100) {
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance/100})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
+            }
+            
+            // Only connect particles if not on mobile
+            if (window.innerWidth >= 768) {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 100) {
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance/100})`;
+                            ctx.lineWidth = 0.2; // Thinner lines
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
                     }
                 }
             }
             
             requestAnimationFrame(animate);
         }
-
-        // Handle resize
+        
+        // Handle resize with debounce
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-            resizeCanvas();
-            init();
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                resizeCanvas();
+                init();
+            }, 200);
         });
-
+        
         // Start everything
         resizeCanvas();
         init();
-        animate();
+        
+        // Start animation after a short delay to prioritize other content
+        setTimeout(() => {
+            requestAnimationFrame(animate);
+        }, 500);
     }
+}
 
-    // Event listeners
-    if (prevBtn && nextBtn) {
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-    }
-
-    indicators.forEach(indicator => {
-        indicator.addEventListener('click', function() {
-            const index = parseInt(this.getAttribute('data-index'));
-            goToSlide(index);
-        });
-    });
-
-    // Pause auto-slide when window loses focus
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-            clearInterval(autoSlideInterval);
-        } else {
-            resetAutoSlide();
-        }
-    });
-
-    // Initialize everything
-    initSlider();
+// Initialize the slider when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new Slider();
 });
 //Page 1 Joined Comm Btn
 
