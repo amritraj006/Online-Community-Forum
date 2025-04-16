@@ -102,6 +102,27 @@
             }
         }
         
+        /* Video Modal Animation */
+        .video-modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .video-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .video-modal-content {
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .video-modal.active .video-modal-content {
+            transform: scale(1);
+        }
+        
         /* Larger text sizes */
         .hero-title {
             font-size: 3.2rem;
@@ -241,8 +262,6 @@
                 </ul>
             </div>
             
-          
-            
             <div>
                 <button class="w-full px-6 py-2.5 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition duration-300 mobile-full-width">
                     Sign Up
@@ -309,13 +328,38 @@
                         <a href="home.html" class="px-8 py-3.5 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition duration-300 shadow-xl hover:shadow-2xl btn-glow pulse flex items-center justify-center mobile-full-width">
                             Get Started - It's Free
                         </a>
-                        <button class="px-8 py-3.5 border-2 border-blue-600 text-blue-600 font-medium rounded-full hover:bg-blue-50 transition duration-300 flex items-center justify-center space-x-3 mobile-full-width">
+                        <button id="watchDemoBtn" class="px-8 py-3.5 border-2 border-blue-600 text-blue-600 font-medium rounded-full hover:bg-blue-50 transition duration-300 flex items-center justify-center space-x-3 mobile-full-width">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
                             </svg>
                             <span>Watch Demo</span>
                         </button>
                     </div>
+                    
+                    <!-- Video Modal -->
+                    <div id="videoModal" class="video-modal fixed inset-0 z-[99999999] flex items-center justify-center  backdrop-blur-md">
+                        <div class="video-modal-content relative w-full max-w-4xl mx-4">
+                            <!-- Close Button with animation -->
+                            <button id="closeVideoBtn" class="absolute -top-12 right-0 text-balck hover:text-cyan-400 transition-colors duration-300 p-2 rounded-full hover:bg-white/10 animate__animated animate__fadeIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            
+                            <!-- Video Container with animation -->
+                            <div class="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden shadow-2xl bg-black animate__animated animate__zoomIn">
+                                <iframe
+                                    id="videoPlayer"
+                                    class="w-full h-[300px] sm:h-[400px] md:h-[500px]"
+                                    src="https://www.youtube.com/embed/gca5PTzzbjc?enablejsapi=1"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="mt-10 user-avatars-container">
                         <div class="user-avatars flex -space-x-3">
                             <img src="https://randomuser.me/api/portraits/women/12.jpg" class="rounded-full border-3 border-white shadow-lg" alt="User">
@@ -379,6 +423,57 @@
             overlay.addEventListener('click', function() {
                 sidebar.classList.remove('active');
                 overlay.classList.remove('active');
+            });
+            
+            // Video Modal functionality
+            const videoModal = document.getElementById('videoModal');
+            const watchDemoBtn = document.getElementById('watchDemoBtn');
+            const closeVideoBtn = document.getElementById('closeVideoBtn');
+            const videoPlayer = document.getElementById('videoPlayer');
+            
+            function toggleVideoModal() {
+                videoModal.classList.toggle('active');
+                
+                if (videoModal.classList.contains('active')) {
+                    // When opening
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Add animations
+                    const closeBtn = videoModal.querySelector('#closeVideoBtn');
+                    const videoContainer = videoModal.querySelector('.aspect-w-16');
+                    
+                    closeBtn.classList.remove('animate__fadeIn');
+                    closeBtn.classList.add('animate__fadeIn');
+                    
+                    videoContainer.classList.remove('animate__zoomIn');
+                    void videoContainer.offsetWidth; // Trigger reflow
+                    videoContainer.classList.add('animate__zoomIn');
+                } else {
+                    // When closing
+                    document.body.style.overflow = '';
+                    
+                    // Pause video when closing
+                    if (videoPlayer) {
+                        videoPlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                    }
+                }
+            }
+            
+            watchDemoBtn.addEventListener('click', toggleVideoModal);
+            closeVideoBtn.addEventListener('click', toggleVideoModal);
+            
+            // Close when clicking outside
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    toggleVideoModal();
+                }
+            });
+            
+            // Close with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                    toggleVideoModal();
+                }
             });
             
             // Add animation to elements when they come into view
