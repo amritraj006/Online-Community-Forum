@@ -588,7 +588,7 @@ document.addEventListener('DOMContentLoaded', function() {
             time: "10 min",
             tag: "#Developer",
             content: "Just finished my first React project! Feeling accomplished. The journey was challenging but rewarding. 🚀",
-            image: "https://source.unsplash.com/random/800x400/?coding,react",
+            image: "https://www.etatvasoft.com/blog/wp-content/uploads/2024/01/Astro.jpg",
             tags: [
                 { text: "#React", color: "blue" },
                 { text: "#Programming", color: "purple" },
@@ -610,7 +610,7 @@ document.addEventListener('DOMContentLoaded', function() {
             time: "20 min",
             tag: "#AI Enthusiast",
             content: "Has anyone tried the new AI-powered coding assistant? It's amazing how it can generate entire functions from comments! 🤖",
-            image: "https://source.unsplash.com/random/800x400/?ai,technology",
+            image: "https://atlasiko.com/assets/blog/ai-powered-coding-assistant.jpg",
             tags: [
                 { text: "#AI", color: "purple" },
                 { text: "#Technology", color: "blue" },
